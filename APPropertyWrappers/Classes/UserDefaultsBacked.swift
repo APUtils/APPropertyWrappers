@@ -10,7 +10,7 @@ import Foundation
 
 /// Property wrapper that stores value as an object in UserDefaults.
 @propertyWrapper
-struct UserDefaultsBacked<V> {
+public struct UserDefaultsBacked<V> {
     
     private let key: String
     private let defaultValue: V

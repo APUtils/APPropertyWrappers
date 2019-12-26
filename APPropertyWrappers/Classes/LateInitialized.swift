@@ -10,7 +10,7 @@
 /// Allows to avoid force unwrapped access.
 /// Might be used e.g. for viewModel.
 @propertyWrapper
-struct LateInitialized<V> {
+public struct LateInitialized<V> {
     
     private var storage: V?
     
