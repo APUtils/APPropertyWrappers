@@ -1,0 +1,16 @@
+PODS:
+  - APPropertyWrappers (1.0.0)
+
+DEPENDENCIES:
+  - APPropertyWrappers (from `../`)
+
+EXTERNAL SOURCES:
+  APPropertyWrappers:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  APPropertyWrappers: 6a1039dd22df82e77278d3d136e81c6980843c40
+
+PODFILE CHECKSUM: 2bd9361f831acac43b6bdfcae83f59705fef4e24
+
+COCOAPODS: 1.8.4
