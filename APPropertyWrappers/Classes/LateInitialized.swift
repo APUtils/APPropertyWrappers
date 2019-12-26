@@ -14,7 +14,7 @@ public struct LateInitialized<V> {
     
     private var storage: V?
     
-    var wrappedValue: V {
+    public var wrappedValue: V {
         get {
             guard let value = storage else {
                 fatalError("value has not yet been set!")
@@ -26,7 +26,7 @@ public struct LateInitialized<V> {
         }
     }
     
-    init() {
+    public init() {
         storage = nil
     }
 }

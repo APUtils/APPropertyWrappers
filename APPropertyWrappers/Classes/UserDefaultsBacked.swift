@@ -15,17 +15,17 @@ public struct UserDefaultsBacked<V> {
     private let key: String
     private let defaultValue: V
     
-    var wrappedValue: V {
+    public var wrappedValue: V {
         get { return UserDefaults.standard.object(forKey: key) as? V ?? defaultValue }
         set { UserDefaults.standard.set(newValue, forKey: key) }
     }
     
     /// Removes object from the UserDefaults
-    func removeFromUserDefaults() {
+    public func removeFromUserDefaults() {
         UserDefaults.standard.removeObject(forKey: key)
     }
     
-    init(key: String, defaultValue: V) {
+    public init(key: String, defaultValue: V) {
         self.key = key
         self.defaultValue = defaultValue
     }
