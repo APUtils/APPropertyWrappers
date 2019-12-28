@@ -655,7 +655,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.convene.Elevate.APPropertyWrappers;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -685,7 +685,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.convene.Elevate.APPropertyWrappers;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -709,7 +709,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-Example${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -731,7 +731,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-Example${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -753,7 +753,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-ExampleTests${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
@@ -776,7 +776,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.APPropertyWrappers-ExampleTests${DEVELOPMENT_TEAM}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
