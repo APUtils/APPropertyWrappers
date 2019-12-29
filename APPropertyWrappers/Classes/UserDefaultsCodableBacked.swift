@@ -12,20 +12,32 @@ import Foundation
 @propertyWrapper
 public struct UserDefaultsCodableBacked<V: Codable> {
     
+    private let userDefaults: UserDefaults
     private let key: String
     private let defaultValue: V
     
     public var wrappedValue: V {
-        get { return UserDefaults.standard.getCodableValue(type: V.self, forKey: key) ?? defaultValue }
-        set { UserDefaults.standard.setCodableValue(type: V.self, value: newValue, forKey: key) }
+        get { return userDefaults.getCodableValue(type: V.self, forKey: key) ?? defaultValue }
+        set { userDefaults.setCodableValue(type: V.self, value: newValue, forKey: key) }
     }
     
     /// Removes object from the UserDefaults
     public func removeFromUserDefaults() {
-        UserDefaults.standard.removeObject(forKey: key)
+        userDefaults.removeObject(forKey: key)
     }
     
-    public init(key: String, defaultValue: V) {
+    public init(suitName: String? = nil, key: String, defaultValue: V) {
+        if let suitName = suitName {
+            if let userDefaults = UserDefaults(suiteName: suitName) {
+                self.userDefaults = userDefaults
+            } else {
+                print("Unable to initialize user defaults with provided suite: \(suitName)")
+                self.userDefaults = UserDefaults.standard
+            }
+        } else {
+            self.userDefaults = UserDefaults.standard
+        }
+        
         self.key = key
         self.defaultValue = defaultValue
     }
