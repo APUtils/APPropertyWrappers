@@ -1,5 +1,5 @@
 //
-//  UserDefaultsBacked.swift
+//  UserDefault.swift
 //  APPropertyWrappers
 //
 //  Created by Anton Plebanovich on 12/13/19.
@@ -10,14 +10,13 @@ import Foundation
 
 /// Property wrapper that stores value as an object in UserDefaults.
 @propertyWrapper
-public struct UserDefaultsBacked<V> {
+public struct UserDefault<V> {
     
     private let userDefaults: UserDefaults
     private let key: String
-    private let defaultValue: V
     
     public var wrappedValue: V {
-        get { return userDefaults.object(forKey: key) as? V ?? defaultValue }
+        get { return userDefaults.object(forKey: key) as! V }
         set { userDefaults.set(newValue, forKey: key) }
     }
     
@@ -26,7 +25,7 @@ public struct UserDefaultsBacked<V> {
         userDefaults.removeObject(forKey: key)
     }
     
-    public init(suitName: String? = nil, key: String, defaultValue: V) {
+    public init(suitName: String? = nil, key: String, defaultValue: @autoclosure () -> V) {
         if let suitName = suitName {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
@@ -39,6 +38,9 @@ public struct UserDefaultsBacked<V> {
         }
         
         self.key = key
-        self.defaultValue = defaultValue
+        
+        if userDefaults.object(forKey: key) == nil {
+            wrappedValue = defaultValue()
+        }
     }
 }

@@ -10,14 +10,13 @@ import Foundation
 
 /// Property wrapper that stores codable value as data in UserDefaults.
 @propertyWrapper
-public struct UserDefaultsCodableBacked<V: Codable> {
+public struct UserDefaultCodable<V: Codable> {
     
     private let userDefaults: UserDefaults
     private let key: String
-    private let defaultValue: V
     
     public var wrappedValue: V {
-        get { return userDefaults.getCodableValue(type: V.self, forKey: key) ?? defaultValue }
+        get { return userDefaults.getCodableValue(type: V.self, forKey: key)! }
         set { userDefaults.setCodableValue(type: V.self, value: newValue, forKey: key) }
     }
     
@@ -26,7 +25,7 @@ public struct UserDefaultsCodableBacked<V: Codable> {
         userDefaults.removeObject(forKey: key)
     }
     
-    public init(suitName: String? = nil, key: String, defaultValue: V) {
+    public init(suitName: String? = nil, key: String, defaultValue: @autoclosure () -> V) {
         if let suitName = suitName {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
@@ -39,7 +38,10 @@ public struct UserDefaultsCodableBacked<V: Codable> {
         }
         
         self.key = key
-        self.defaultValue = defaultValue
+        
+        if userDefaults.object(forKey: key) == nil {
+            wrappedValue = defaultValue()
+        }
     }
 }
 
