@@ -1,5 +1,5 @@
 //
-//  UserDefault.swift
+//  UserDefaultsBacked.swift
 //  APPropertyWrappers
 //
 //  Created by Anton Plebanovich on 12/13/19.
@@ -10,22 +10,27 @@ import Foundation
 
 /// Property wrapper that stores value as an object in UserDefaults.
 @propertyWrapper
-public struct UserDefault<V> {
+open class UserDefaultsBacked<V> {
     
     private let userDefaults: UserDefaults
     private let key: String
+    @Lazy private var defferedDefaultValue: V
     
-    public var wrappedValue: V {
-        get { return userDefaults.object(forKey: key) as! V }
+    open var wrappedValue: V {
+        get { return userDefaults.object(forKey: key) as? V ?? defferedDefaultValue }
         set { userDefaults.set(newValue, forKey: key) }
     }
     
     /// Removes object from the UserDefaults
-    public func removeFromUserDefaults() {
+    open func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)
     }
     
-    public init(suitName: String? = nil, key: String, defaultValue: @autoclosure () -> V) {
+    public convenience init(suitName: String? = nil, key: String, defaultValue: V) {
+        self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue)
+    }
+    
+    public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
         if let suitName = suitName {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
@@ -38,9 +43,6 @@ public struct UserDefault<V> {
         }
         
         self.key = key
-        
-        if userDefaults.object(forKey: key) == nil {
-            wrappedValue = defaultValue()
-        }
+        self._defferedDefaultValue = Lazy(lazyValue: defferedDefaultValue())
     }
 }

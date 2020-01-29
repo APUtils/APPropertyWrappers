@@ -10,22 +10,27 @@ import Foundation
 
 /// Property wrapper that stores codable value as data in UserDefaults.
 @propertyWrapper
-public struct UserDefaultCodable<V: Codable> {
+open class UserDefaultsCodableBacked<V: Codable> {
     
     private let userDefaults: UserDefaults
     private let key: String
+    @Lazy private var defferedDefaultValue: V
     
-    public var wrappedValue: V {
-        get { return userDefaults.getCodableValue(type: V.self, forKey: key)! }
+    open var wrappedValue: V {
+        get { return userDefaults.getCodableValue(type: V.self, forKey: key) ?? defferedDefaultValue }
         set { userDefaults.setCodableValue(type: V.self, value: newValue, forKey: key) }
     }
     
     /// Removes object from the UserDefaults
-    public func removeFromUserDefaults() {
+    open func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)
     }
     
-    public init(suitName: String? = nil, key: String, defaultValue: @autoclosure () -> V) {
+    convenience init(suitName: String? = nil, key: String, defaultValue: V) {
+        self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue)
+    }
+    
+    public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
         if let suitName = suitName {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
@@ -38,10 +43,7 @@ public struct UserDefaultCodable<V: Codable> {
         }
         
         self.key = key
-        
-        if userDefaults.object(forKey: key) == nil {
-            wrappedValue = defaultValue()
-        }
+        self._defferedDefaultValue = Lazy(lazyValue: defferedDefaultValue())
     }
 }
 
