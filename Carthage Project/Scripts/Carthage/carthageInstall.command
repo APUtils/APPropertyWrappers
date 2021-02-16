@@ -5,7 +5,7 @@
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 set -e
 
-declare -a tests_frameworks=("github \"Quick\/Nimble\"" "github \"Quick\/Quick\"" "github \"uber\/ios-snapshot-test-case\"" "github \"ashfurrow\/Nimble-Snapshots\"")
+declare -a tests_frameworks=("github \"Quick\/Nimble\"" "github \"Quick\/Quick\"")
 
 disableTestsFramework() {
     previous_cartfile=`cat "Cartfile.resolved"`
@@ -25,8 +25,14 @@ enableTestsFramework() {
 # Assume scripts are placed in /Scripts/Carthage dir
 base_dir=$(dirname "$0")
 cd "$base_dir"
+
+# includes
+. ./utils.sh
+
 cd ..
 cd ..
+
+applyXcode12Workaround
 
 # Try one level up if didn't find Cartfile.
 if [ ! -f "Cartfile" ]; then
