@@ -46,3 +46,23 @@ open class UserDefaultsBacked<V> {
         self._defferedDefaultValue = Lazy(lazyValue: defferedDefaultValue())
     }
 }
+
+// ******************************* MARK: - Convenience Inits
+
+extension UserDefaultsBacked where V: ExpressibleByNilLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: nil)
+    }
+}
+
+extension UserDefaultsBacked where V: ExpressibleByArrayLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: [])
+    }
+}
+
+extension UserDefaultsBacked where V: ExpressibleByDictionaryLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: [:])
+    }
+}

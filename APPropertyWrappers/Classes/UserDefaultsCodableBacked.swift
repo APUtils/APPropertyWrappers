@@ -47,6 +47,26 @@ open class UserDefaultsCodableBacked<V: Codable> {
     }
 }
 
+// ******************************* MARK: - Convenience Inits
+
+extension UserDefaultsCodableBacked where V: ExpressibleByNilLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: nil)
+    }
+}
+
+extension UserDefaultsCodableBacked where V: ExpressibleByArrayLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: [])
+    }
+}
+
+extension UserDefaultsCodableBacked where V: ExpressibleByDictionaryLiteral {
+    convenience init(suitName: String? = nil, key: String) {
+        self.init(suitName: suitName, key: key, defaultValue: [:])
+    }
+}
+
 // ******************************* MARK: - Codable Support
 
 private extension UserDefaults {
