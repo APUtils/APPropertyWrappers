@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,11 +25,18 @@
 		0DE1143D2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */; };
 		0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */; };
 		0DE114412605FCA100D75ADA /* EquatableFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114402605FCA100D75ADA /* EquatableFilter.swift */; };
-		0DE114432605FCC100D75ADA /* EquatableFilter+ObservableObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114422605FCC100D75ADA /* EquatableFilter+ObservableObserverType.swift */; };
 		0DE114462605FD1800D75ADA /* ObservableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114452605FD1800D75ADA /* ObservableObserver.swift */; };
 		0DE114482605FE9A00D75ADA /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114472605FE9A00D75ADA /* Logger.swift */; };
 		0DE1144A26060A4800D75ADA /* UserDefaultCodable+ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1144926060A4800D75ADA /* UserDefaultCodable+ObserverType.swift */; };
 		0DE1144D26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1144C26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift */; };
+		0DE1146A2606162500D75ADA /* APExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114632606161500D75ADA /* APExtensions.framework */; };
+		0DE1146B2606162500D75ADA /* APExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114632606161500D75ADA /* APExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DE1146C2606162700D75ADA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114622606161500D75ADA /* RxCocoa.framework */; };
+		0DE1146D2606162700D75ADA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114622606161500D75ADA /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DE1146E2606162800D75ADA /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114642606161500D75ADA /* RxRelay.framework */; };
+		0DE1146F2606162800D75ADA /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114642606161500D75ADA /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DE114702606162900D75ADA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114652606161500D75ADA /* RxSwift.framework */; };
+		0DE114712606162900D75ADA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114652606161500D75ADA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E202681822117D03004CC28A /* APPropertyWrappers.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* APPropertyWrappers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E265E9BC23E1C9F7008C08C7 /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265E9BB23E1C9F7008C08C7 /* Lazy.swift */; };
 		E275E06F229FF84E00E9900C /* APPropertyWrappers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E202681322117D03004CC28A /* APPropertyWrappers.framework */; };
@@ -80,7 +87,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0DE114712606162900D75ADA /* RxSwift.framework in Embed Frameworks */,
+				0DE1146F2606162800D75ADA /* RxRelay.framework in Embed Frameworks */,
+				0DE1146D2606162700D75ADA /* RxCocoa.framework in Embed Frameworks */,
 				E275E08422A03A8900E9900C /* APPropertyWrappers.framework in Embed Frameworks */,
+				0DE1146B2606162500D75ADA /* APExtensions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,11 +111,14 @@
 		0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift; sourceTree = "<group>"; };
 		0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableProjected.swift; sourceTree = "<group>"; };
 		0DE114402605FCA100D75ADA /* EquatableFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter.swift; sourceTree = "<group>"; };
-		0DE114422605FCC100D75ADA /* EquatableFilter+ObservableObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquatableFilter+ObservableObserverType.swift"; sourceTree = "<group>"; };
 		0DE114452605FD1800D75ADA /* ObservableObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableObserver.swift; sourceTree = "<group>"; };
 		0DE114472605FE9A00D75ADA /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0DE1144926060A4800D75ADA /* UserDefaultCodable+ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultCodable+ObserverType.swift"; sourceTree = "<group>"; };
 		0DE1144C26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+ObserverType.swift"; sourceTree = "<group>"; };
+		0DE114622606161500D75ADA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		0DE114632606161500D75ADA /* APExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APExtensions.framework; path = ../../Carthage/Build/iOS/APExtensions.framework; sourceTree = "<group>"; };
+		0DE114642606161500D75ADA /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		0DE114652606161500D75ADA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
 		5266D55B9568215188FA9A03 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -152,7 +166,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE114702606162900D75ADA /* RxSwift.framework in Frameworks */,
 				E275E08322A03A8900E9900C /* APPropertyWrappers.framework in Frameworks */,
+				0DE1146C2606162700D75ADA /* RxCocoa.framework in Frameworks */,
+				0DE1146A2606162500D75ADA /* APExtensions.framework in Frameworks */,
+				0DE1146E2606162800D75ADA /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +205,6 @@
 			children = (
 				0DE114402605FCA100D75ADA /* EquatableFilter.swift */,
 				0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */,
-				0DE114422605FCC100D75ADA /* EquatableFilter+ObservableObserverType.swift */,
 				0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */,
 				0DE1144926060A4800D75ADA /* UserDefaultCodable+ObserverType.swift */,
 			);
@@ -294,6 +311,10 @@
 		E2A739612260CFC800E97D55 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0DE114632606161500D75ADA /* APExtensions.framework */,
+				0DE114622606161500D75ADA /* RxCocoa.framework */,
+				0DE114642606161500D75ADA /* RxRelay.framework */,
+				0DE114652606161500D75ADA /* RxSwift.framework */,
 				E2C3136922DF77F300D6797A /* __FailureDiffs */,
 				E2C3136822DF77F300D6797A /* __ReferenceImages */,
 				E2A739642260CFC800E97D55 /* Info.plist */,
@@ -373,7 +394,6 @@
 				E2A739472260CFC700E97D55 /* Sources */,
 				E2A739482260CFC700E97D55 /* Frameworks */,
 				E2A739492260CFC700E97D55 /* Resources */,
-				7A78314AEA7299684D67A83C /* Carthage Copy */,
 				E275E08722A03A8900E9900C /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -495,25 +515,6 @@
 			shellPath = /bin/bash;
 			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstall.command\"\n";
 		};
-		7A78314AEA7299684D67A83C /* Carthage Copy */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Carthage Copy";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		E67432110B43CFE285604644 /* Carthage Install */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -551,7 +552,6 @@
 				0D89233D23B8F7B8004F625D /* UserDefaultCodable.swift in Sources */,
 				0DE1144D26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift in Sources */,
 				0DE114482605FE9A00D75ADA /* Logger.swift in Sources */,
-				0DE114432605FCC100D75ADA /* EquatableFilter+ObservableObserverType.swift in Sources */,
 				0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */,
 				0DE114412605FCA100D75ADA /* EquatableFilter.swift in Sources */,
 				0D5A7DAB23B4FB0700E0687B /* UserDefault.swift in Sources */,

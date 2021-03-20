@@ -41,7 +41,10 @@ pod 'APPropertyWrappers/RxSwift', '~> 2.0'
 
 ## Usage
 
-TODO
+```swift
+@UserDefaultCodable(key: "ViewController_runCounter", defaultValue: 0)
+var runCounter: Int
+```
 
 See example and test projects for more details.
 
