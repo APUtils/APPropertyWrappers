@@ -42,7 +42,7 @@ open class UserDefaultCodable<V: Codable> {
             do {
                 try UserDefaults.standard.setCodableValue(type: Box.self, value: Box(value: newValue), forKey: key)
             } catch {
-                logError("Unable to set codable value for UserDefaults", error: error, data: ["type": V.self, "value": newValue, "key": key, "defaultValue": defferedDefaultValue])
+                RoutableLogger.logError("Unable to set codable value for UserDefaults", error: error, data: ["type": V.self, "value": newValue, "key": key, "defaultValue": defferedDefaultValue])
             }
         }
     }
@@ -61,7 +61,7 @@ open class UserDefaultCodable<V: Codable> {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
             } else {
-                logError("Unable to initialize user defaults", data: ["suitName": suitName])
+                RoutableLogger.logError("Unable to initialize user defaults", data: ["suitName": suitName])
                 self.userDefaults = UserDefaults.standard
             }
         } else {
@@ -75,7 +75,7 @@ open class UserDefaultCodable<V: Codable> {
             do {
                 return try UserDefaults.standard.getCodableValue(type: Box.self, forKey: key)?.value ?? defferedDefaultValue()
             } catch {
-                logError("Unable to get codable value from UserDefaults", error: error, data: ["type": V.self, "key": key, "defaultValue": defferedDefaultValue])
+                RoutableLogger.logError("Unable to get codable value from UserDefaults", error: error, data: ["type": V.self, "key": key, "defaultValue": defferedDefaultValue])
                 return defferedDefaultValue()
             }
         }())
@@ -138,7 +138,7 @@ private extension UserDefaults {
         do {
             return try type.create(propertyListData: data)
         } catch {
-            logInfo("Erasing corrupted data for key: \(key)")
+            RoutableLogger.logInfo("Erasing corrupted data for key: \(key)")
             removeObject(forKey: key)
             throw error
         }

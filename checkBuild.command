@@ -8,7 +8,7 @@ cd "$base_dir"
 echo ""
 echo ""
 echo "Building Pods project..."
-set -o pipefail && xcodebuild -workspace "Pods Project/APPropertyWrappers.xcworkspace" -scheme "APPropertyWrappers-Example" -configuration "Release" -sdk iphonesimulator clean build | xcpretty
+set -o pipefail && xcodebuild -workspace "Pods Project/APPropertyWrappers.xcworkspace" -scheme "APPropertyWrappers-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
 
 echo -e "\nBuilding Carthage project..."
 . "./Carthage Project/Scripts/Carthage/utils.sh"

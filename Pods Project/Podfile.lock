@@ -1,18 +1,14 @@
 PODS:
-  - APPropertyWrappers (2.1.0):
-    - APPropertyWrappers/Core (= 2.1.0)
-    - APPropertyWrappers/RxSwift (= 2.1.0)
-  - APPropertyWrappers/Core (2.1.0):
-    - LogsManager/RoutableLogger (>= 9.1.3)
-  - APPropertyWrappers/RxSwift (2.1.0):
+  - APPropertyWrappers (2.1.2):
+    - APPropertyWrappers/Core (= 2.1.2)
+    - APPropertyWrappers/RxSwift (= 2.1.2)
+  - APPropertyWrappers/Core (2.1.2):
+    - LogsManager/RoutableLogger (>= 9.1.5)
+  - APPropertyWrappers/RxSwift (2.1.2):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
-  - CocoaLumberjack/Core (3.7.0)
-  - CocoaLumberjack/Swift (3.7.0):
-    - CocoaLumberjack/Core
-  - LogsManager/RoutableLogger (9.1.3):
-    - CocoaLumberjack/Swift
+  - LogsManager/RoutableLogger (9.1.5)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -24,8 +20,7 @@ DEPENDENCIES:
   - APPropertyWrappers (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - CocoaLumberjack
+  trunk:
     - LogsManager
     - RxCocoa
     - RxRelay
@@ -36,13 +31,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APPropertyWrappers: 84decf4f3fd9cb094aeab6175d277c3656370e32
-  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
-  LogsManager: f533c755f3ace74d02f240d81ce13270ef3ead90
+  APPropertyWrappers: 2d9e9643632f3a178b7ccbff0f5280ddb6a7129e
+  LogsManager: e821cea87e608e96cf39a68009d830579098a2cb
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
 
-PODFILE CHECKSUM: bd86a1c9aef5b8f0e7df3ab66c8f24b9efc07b82
+PODFILE CHECKSUM: 11220db83ccefd713a010a6c33c984e4683e38c5
 
 COCOAPODS: 1.10.1

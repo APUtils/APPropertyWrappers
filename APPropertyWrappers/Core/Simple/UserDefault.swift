@@ -41,7 +41,7 @@ open class UserDefault<V> {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
             } else {
-                logError("Unable to initialize user defaults", data: ["suitName": suitName])
+                RoutableLogger.logError("Unable to initialize user defaults", data: ["suitName": suitName])
                 self.userDefaults = UserDefaults.standard
             }
         } else {

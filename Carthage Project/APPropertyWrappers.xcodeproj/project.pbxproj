@@ -103,11 +103,11 @@
 
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		0D20D5552606A08800767851 /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
 		0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateInitialized.swift; sourceTree = "<group>"; };
 		0D5A7DA723B4FB0700E0687B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultCodable.swift; sourceTree = "<group>"; };
 		0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorRelayProjected.swift; sourceTree = "<group>"; };
-		0DE1142E2605FBC200D75ADA /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
 		0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProjected.swift; sourceTree = "<group>"; };
 		0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_BehaviorRelayProjected.swift; sourceTree = "<group>"; };
 		0DE114352605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableObserverProjected.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
 		A29FF7A1684B53344D8C70DD /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.yaml; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
-		B4BEB6A1CDBE65698C0A87B3 /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; };
+		B4BEB6A1CDBE65698C0A87B3 /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA47FC6DA3C0707D6224F2F9 /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		BF7FCB6F2A81EB4C08C6CB34 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D890710C107F3FDD82D5FF96 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 				D890710C107F3FDD82D5FF96 /* checkBuild.command */,
 				EB7C9CD1169FECEA37CFD1CF /* podCheck.command */,
 				FCCF44497BB175FCF2E645B8 /* podPush.command */,
-				0DE1142E2605FBC200D75ADA /* carthageUpdate.command */,
+				0D20D5552606A08800767851 /* podUpdate.command */,
 			);
 			name = _;
 			sourceTree = "<group>";
