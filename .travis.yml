@@ -4,7 +4,7 @@
 
 osx_image: xcode12.4
 
-language: objective-c
+language: swift
 
 cache:
     directories:
@@ -12,9 +12,7 @@ cache:
      - Pods Project/Pods
 
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
-- pod repo update
-- pod install --project-directory='Pods Project'
+- Pods Project/Scripts/Cocoapods/podInstall.command
 - brew install carthage
 - Carthage Project/Scripts/Carthage/carthageInstallTests.command
 
