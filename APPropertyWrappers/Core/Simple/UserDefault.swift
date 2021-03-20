@@ -1,5 +1,5 @@
 //
-//  UserDefaultsBacked.swift
+//  UserDefault.swift
 //  APPropertyWrappers
 //
 //  Created by Anton Plebanovich on 12/13/19.
@@ -10,7 +10,7 @@ import Foundation
 
 /// Property wrapper that stores value as an object in UserDefaults.
 @propertyWrapper
-open class UserDefaultsBacked<V> {
+open class UserDefault<V> {
     
     private let userDefaults: UserDefaults
     private let key: String
@@ -35,7 +35,7 @@ open class UserDefaultsBacked<V> {
             if let userDefaults = UserDefaults(suiteName: suitName) {
                 self.userDefaults = userDefaults
             } else {
-                print("Unable to initialize user defaults with provided suite: \(suitName)")
+                logError("Unable to initialize user defaults", data: ["suitName": suitName])
                 self.userDefaults = UserDefaults.standard
             }
         } else {
@@ -49,19 +49,19 @@ open class UserDefaultsBacked<V> {
 
 // ******************************* MARK: - Convenience Inits
 
-public extension UserDefaultsBacked where V: ExpressibleByNilLiteral {
+public extension UserDefault where V: ExpressibleByNilLiteral {
     convenience init(suitName: String? = nil, key: String) {
         self.init(suitName: suitName, key: key, defaultValue: nil)
     }
 }
 
-public extension UserDefaultsBacked where V: ExpressibleByArrayLiteral {
+public extension UserDefault where V: ExpressibleByArrayLiteral {
     convenience init(suitName: String? = nil, key: String) {
         self.init(suitName: suitName, key: key, defaultValue: [])
     }
 }
 
-public extension UserDefaultsBacked where V: ExpressibleByDictionaryLiteral {
+public extension UserDefault where V: ExpressibleByDictionaryLiteral {
     convenience init(suitName: String? = nil, key: String) {
         self.init(suitName: suitName, key: key, defaultValue: [:])
     }

@@ -6,31 +6,37 @@
 //  Copyright © 2019 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
+
 /// Late initialized property. Must be assigned before accessed.
 /// Allows to avoid force unwrapped access.
 /// Might be used e.g. for viewModel.
 @propertyWrapper
-public struct LateInitialized<V> {
+open class LateInitialized<V> {
     
-    private var storage: V?
+    open var projectedValue: V?
     
-    public var wrappedValue: V {
+    open var wrappedValue: V {
         get {
-            guard let value = storage else {
+            guard let value = projectedValue else {
                 fatalError("value has not yet been set!")
             }
             return value
         }
         set {
-            storage = newValue
+            projectedValue = newValue
         }
     }
     
-    public init() {
-        storage = nil
+    public init(projectedValue: V? = nil) {
+        self.projectedValue = projectedValue
     }
 }
 
 // ******************************* MARK: - Equatable
 
-extension LateInitialized: Equatable where V: Equatable {}
+extension LateInitialized: Equatable where V: Equatable {
+    public static func == (lhs: LateInitialized<V>, rhs: LateInitialized<V>) -> Bool {
+        lhs.wrappedValue == rhs.wrappedValue
+    }
+}

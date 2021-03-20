@@ -1,15 +1,15 @@
-# Deployment Target
-platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/Artsy/Specs.git'
 
+# Deployment Target
+platform :ios, '9.0'
 
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
 use_frameworks!
 
-
 target 'APPropertyWrappers_Example' do
     pod 'APPropertyWrappers', :path => '../'
 end
-
 
 post_install do |installer|
     # Add podInstall.command and podUpdate.command shell scripts to Pods project

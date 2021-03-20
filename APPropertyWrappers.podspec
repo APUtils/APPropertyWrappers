@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APPropertyWrappers'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = 'A short description of APPropertyWrappers.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Simple and complex property wrappers for native `Swift` and for `RxSwift`.
                        DESC
 
   s.homepage         = 'https://github.com/APUtils/APPropertyWrappers'
@@ -28,16 +28,21 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/APUtils/APPropertyWrappers.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_versions = ['5.1']
 
-  s.source_files = 'APPropertyWrappers/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'APPropertyWrappers' => ['APPropertyWrappers/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'APPropertyWrappers/Core/**/*'
+
+  s.subspec 'Core' do |subspec|
+    subspec.source_files = 'APPropertyWrappers/Core/**/*'
+  end
+
+  s.subspec 'RxSwift' do |subspec|
+    subspec.source_files = 'APPropertyWrappers/RxSwift/**/*'
+    subspec.dependency 'APPropertyWrappers/Core'
+    subspec.dependency 'RxCocoa'
+    subspec.dependency 'RxSwift'
+  end
+  
 end

@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DE114522606111000D75ADA /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* APPropertyWrappers_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPropertyWrappers_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		607FACF51AFB993E008FA782 /* _ */ = {
 			isa = PBXGroup;
 			children = (
+				0DE114522606111000D75ADA /* APPropertyWrappers.podspec */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -199,10 +201,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-APPropertyWrappers_Example/Pods-APPropertyWrappers_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APPropertyWrappers/APPropertyWrappers.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APPropertyWrappers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -6,17 +6,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/APPropertyWrappers.svg?style=flat)](http://cocoapods.org/pods/APPropertyWrappers)
 [![CI Status](http://img.shields.io/travis/APUtils/APPropertyWrappers.svg?style=flat)](https://travis-ci.org/APUtils/APPropertyWrappers)
 
-TODO
+Simple and complex property wrappers for native `Swift` and for `RxSwift`.
 
 ## Example
 
 Clone the repo and then open `Carthage Project/APPropertyWrappers.xcodeproj`
-
-## GIF animation
-
-TODO
-
-<img src="Example/APPropertyWrappers/<#NAME#>.gif"/>
 
 ## Installation
 
@@ -27,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APPropertyWrappers" ~> 1.0
+github "APUtils/APPropertyWrappers" ~> 2.0
 ```
 
 #### CocoaPods
@@ -36,7 +30,13 @@ APPropertyWrappers is available through [CocoaPods](http://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APPropertyWrappers', '~> 1.0'
+pod 'APPropertyWrappers', '~> 2.0'
+```
+
+To add `RxSwift` property wrappers additionally add:
+
+```ruby
+pod 'APPropertyWrappers/RxSwift', '~> 2.0'
 ```
 
 ## Usage
