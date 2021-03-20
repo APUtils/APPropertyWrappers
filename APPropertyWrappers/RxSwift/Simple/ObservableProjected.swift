@@ -15,13 +15,13 @@ import RxSwift
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: ObservableProjected
 @propertyWrapper
-final class ObservableProjected<V> {
+public final class ObservableProjected<V> {
     
     @BehaviorRelayProjected fileprivate var storage: V
     
-    var projectedValue: Observable<V> { $storage.asObservable() }
+    public var projectedValue: Observable<V> { $storage.asObservable() }
     
-    var wrappedValue: V {
+    public var wrappedValue: V {
         get {
             storage
         }
@@ -30,7 +30,7 @@ final class ObservableProjected<V> {
         }
     }
     
-    init(wrappedValue: V) {
+    public init(wrappedValue: V) {
         storage = wrappedValue
     }
 }
@@ -38,7 +38,7 @@ final class ObservableProjected<V> {
 // ******************************* MARK: - Equatable
 
 extension ObservableProjected: Equatable where V: Equatable {
-    static func == (lhs: ObservableProjected<V>, rhs: ObservableProjected<V>) -> Bool {
+    public static func == (lhs: ObservableProjected<V>, rhs: ObservableProjected<V>) -> Bool {
         lhs.wrappedValue == rhs.wrappedValue
     }
 }
@@ -47,12 +47,12 @@ extension ObservableProjected: Equatable where V: Equatable {
 
 extension ObservableProjected: Codable where V: Codable {
     
-    convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         let value = try V(from: decoder)
         self.init(wrappedValue: value)
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         try wrappedValue.encode(to: encoder)
     }
 }
@@ -61,13 +61,13 @@ extension ObservableProjected: Codable where V: Codable {
 
 extension ObservableProjected: ObservableObserverType {
     
-    typealias Element = V
+    public typealias Element = V
     
-    func subscribe<Observer>(_ observer: Observer) -> Disposable where Observer: ObserverType, Element == Observer.Element {
+    public func subscribe<Observer>(_ observer: Observer) -> Disposable where Observer: ObserverType, Element == Observer.Element {
         $storage.subscribe(observer)
     }
     
-    func on(_ event: Event<V>) {
+    public func on(_ event: Event<V>) {
         $storage.on(event)
     }
 }

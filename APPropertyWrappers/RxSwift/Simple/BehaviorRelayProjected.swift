@@ -14,12 +14,12 @@ import RxRelay
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: BehaviorRelayProjected
 @propertyWrapper
-final class BehaviorRelayProjected<V> {
+public final class BehaviorRelayProjected<V> {
     
     // swiftlint:disable:next behavior_relay_backed
-    let projectedValue: BehaviorRelay<V>
+    public let projectedValue: BehaviorRelay<V>
     
-    var wrappedValue: V {
+    public var wrappedValue: V {
         get {
             projectedValue.value
         }
@@ -28,11 +28,11 @@ final class BehaviorRelayProjected<V> {
         }
     }
     
-    init(wrappedValue: V) {
+    public init(wrappedValue: V) {
         projectedValue = BehaviorRelay(value: wrappedValue)
     }
     
-    init(projectedValue: BehaviorRelay<V>) {
+    public init(projectedValue: BehaviorRelay<V>) {
         self.projectedValue = projectedValue
     }
 }
@@ -40,7 +40,7 @@ final class BehaviorRelayProjected<V> {
 // ******************************* MARK: - Equatable
 
 extension BehaviorRelayProjected: Equatable where V: Equatable {
-    static func == (lhs: BehaviorRelayProjected<V>, rhs: BehaviorRelayProjected<V>) -> Bool {
+    public static func == (lhs: BehaviorRelayProjected<V>, rhs: BehaviorRelayProjected<V>) -> Bool {
         lhs.wrappedValue == rhs.wrappedValue
     }
 }
@@ -49,12 +49,12 @@ extension BehaviorRelayProjected: Equatable where V: Equatable {
 
 extension BehaviorRelayProjected: Codable where V: Codable {
     
-    convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         let value = try V(from: decoder)
         self.init(wrappedValue: value)
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         try wrappedValue.encode(to: encoder)
     }
 }

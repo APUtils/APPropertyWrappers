@@ -15,16 +15,16 @@ import RxSwift
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: EquatableFilter_BehaviorRelayProjected
 @propertyWrapper
-final class EquatableFilter_BehaviorRelayProjected<V: Equatable> {
+open class EquatableFilter_BehaviorRelayProjected<V: Equatable> {
     
     @EquatableFilter fileprivate var filter: V
     @BehaviorRelayProjected fileprivate var storage: V
     fileprivate let disposeBag = DisposeBag()
     
     // swiftlint:disable:next behavior_relay_backed
-    var projectedValue: BehaviorRelay<V> { $storage }
+    open var projectedValue: BehaviorRelay<V> { $storage }
     
-    var wrappedValue: V {
+    open var wrappedValue: V {
         get {
             storage
         }
@@ -33,7 +33,7 @@ final class EquatableFilter_BehaviorRelayProjected<V: Equatable> {
         }
     }
     
-    init(wrappedValue: V, compare: EquatableFilter<V>.Compare? = nil) {
+    public init(wrappedValue: V, compare: EquatableFilter<V>.Compare? = nil) {
         storage = wrappedValue
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
         

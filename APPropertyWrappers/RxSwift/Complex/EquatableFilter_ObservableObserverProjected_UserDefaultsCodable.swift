@@ -18,19 +18,19 @@ import RxSwift
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: EquatableFilter_ObservableObserverProjected_UserDefaultCodable
 @propertyWrapper
-final class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Codable & Equatable> {
+open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Codable & Equatable> {
     
     @EquatableFilter fileprivate var filter: V
     @UserDefaultCodable fileprivate var userDefault: V
     @BehaviorRelayProjected fileprivate var storage: V
     
-    var projectedValue: ObservableObserver<V> {
+    open var projectedValue: ObservableObserver<V> {
         ObservableObserver(observer: _filter.asObserver(), observable: $storage.asObservable())
     }
     
     fileprivate let disposeBag = DisposeBag()
     
-    var wrappedValue: V {
+    open var wrappedValue: V {
         get {
             /// For some reason using `UserDefaults` as the source doesn't always work
             /// and causes crashes in unit tests. Might be sync issue.
@@ -41,7 +41,7 @@ final class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Co
         }
     }
     
-    init(key: String, defaultValue: V, compare: EquatableFilter<V>.Compare? = nil) {
+    public init(key: String, defaultValue: V, compare: EquatableFilter<V>.Compare? = nil) {
         _userDefault = UserDefaultCodable(key: key, defaultValue: defaultValue)
         storage = _userDefault.wrappedValue
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)

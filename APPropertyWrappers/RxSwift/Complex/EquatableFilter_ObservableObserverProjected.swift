@@ -15,18 +15,18 @@ import RxSwift
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: EquatableFilter_ObservableObserverProjected
 @propertyWrapper
-final class EquatableFilter_ObservableObserverProjected<V: Equatable> {
+open class EquatableFilter_ObservableObserverProjected<V: Equatable> {
     
     @EquatableFilter fileprivate var filter: V
     @BehaviorRelayProjected fileprivate var storage: V
     fileprivate let disposeBag = DisposeBag()
     
-    var projectedValue: ObservableObserver<V> {
+    open var projectedValue: ObservableObserver<V> {
         ObservableObserver(observer: _filter.asObserver(),
                            observable: $storage.asObservable())
     }
     
-    var wrappedValue: V {
+    open var wrappedValue: V {
         get {
             storage
         }
@@ -35,14 +35,14 @@ final class EquatableFilter_ObservableObserverProjected<V: Equatable> {
         }
     }
     
-    init(wrappedValue value: V, compare: EquatableFilter<V>.Compare? = nil) {
+    public init(wrappedValue value: V, compare: EquatableFilter<V>.Compare? = nil) {
         storage = value
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
         
         setup()
     }
     
-    init(storage: BehaviorRelay<V>, compare: EquatableFilter<V>.Compare? = nil) {
+    public init(storage: BehaviorRelay<V>, compare: EquatableFilter<V>.Compare? = nil) {
         _storage = BehaviorRelayProjected(projectedValue: storage)
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
         

@@ -14,15 +14,15 @@ import RxSwift
 /// - note: It's a class and not a struct to prevent `Simultaneous accesses to 0xXXXXXXXXX, but modification requires exclusive access` crash.
 /// - Tag: EquatableFilter_ObservableProjected
 @propertyWrapper
-final class EquatableFilter_ObservableProjected<V: Equatable> {
+public final class EquatableFilter_ObservableProjected<V: Equatable> {
     
     @EquatableFilter fileprivate var filter: V
     @BehaviorRelayProjected fileprivate var storage: V
     fileprivate let disposeBag = DisposeBag()
     
-    var projectedValue: Observable<V> { $storage.asObservable() }
+    public var projectedValue: Observable<V> { $storage.asObservable() }
     
-    var wrappedValue: V {
+    public var wrappedValue: V {
         get {
             storage
         }
@@ -31,7 +31,7 @@ final class EquatableFilter_ObservableProjected<V: Equatable> {
         }
     }
     
-    init(wrappedValue: V, compare: EquatableFilter<V>.Compare? = nil) {
+    public init(wrappedValue: V, compare: EquatableFilter<V>.Compare? = nil) {
         storage = wrappedValue
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
         
@@ -50,7 +50,7 @@ final class EquatableFilter_ObservableProjected<V: Equatable> {
 // ******************************* MARK: - Equatable
 
 extension EquatableFilter_ObservableProjected: Equatable where V: Equatable {
-    static func == (lhs: EquatableFilter_ObservableProjected<V>, rhs: EquatableFilter_ObservableProjected<V>) -> Bool {
+    public static func == (lhs: EquatableFilter_ObservableProjected<V>, rhs: EquatableFilter_ObservableProjected<V>) -> Bool {
         lhs.wrappedValue == rhs.wrappedValue
     }
 }
@@ -59,12 +59,12 @@ extension EquatableFilter_ObservableProjected: Equatable where V: Equatable {
 
 extension EquatableFilter_ObservableProjected: Codable where V: Codable {
     
-    convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         let value = try V(from: decoder)
         self.init(wrappedValue: value)
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         try wrappedValue.encode(to: encoder)
     }
 }
@@ -73,13 +73,13 @@ extension EquatableFilter_ObservableProjected: Codable where V: Codable {
 
 extension EquatableFilter_ObservableProjected: ObservableObserverType {
     
-    typealias Element = V
+    public typealias Element = V
     
-    func subscribe<Observer>(_ observer: Observer) -> Disposable where Observer: ObserverType, Element == Observer.Element {
+    public func subscribe<Observer>(_ observer: Observer) -> Disposable where Observer: ObserverType, Element == Observer.Element {
         $storage.subscribe(observer)
     }
     
-    func on(_ event: Event<V>) {
+    public func on(_ event: Event<V>) {
         switch event {
         case .next(let element): wrappedValue = element
         default: return
