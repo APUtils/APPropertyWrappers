@@ -24,6 +24,8 @@ Cartfile:
 github "APUtils/APPropertyWrappers" ~> 2.0
 ```
 
+You should later add both `APPropertyWrappers` and `RoutableLogger` frameworks to your project.
+
 #### CocoaPods
 
 APPropertyWrappers is available through [CocoaPods](http://cocoapods.org). To install

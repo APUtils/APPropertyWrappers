@@ -1,1 +1,2 @@
+github "APUtils/LogsManager" >= 9.1.3
 github "ReactiveX/RxSwift"
