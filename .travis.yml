@@ -18,5 +18,6 @@ before_install:
 
 script:
 - bash checkBuild.command
-- pod lib lint
-- pod spec lint
+# Not enough CI time for this checks
+# - pod lib lint
+# - pod spec lint
