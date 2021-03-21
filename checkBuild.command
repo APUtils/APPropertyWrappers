@@ -16,7 +16,7 @@ applyXcode12Workaround
 set -o pipefail && xcodebuild -project "Carthage Project/APPropertyWrappers.xcodeproj" -sdk iphonesimulator -target "Example" | xcpretty
 
 echo -e "\nBuilding with Carthage..."
-carthage build --no-skip-current
+carthage build --no-skip-current --cache-builds
 
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
