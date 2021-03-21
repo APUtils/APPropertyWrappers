@@ -32,7 +32,8 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
   s.swift_versions = ['5.1']
 
   s.frameworks = 'Foundation', 'UIKit'
-  s.source_files = 'APPropertyWrappers/Core/**/*'
+  
+  s.default_subspec = 'Core'
 
   s.subspec 'Core' do |subspec|
     subspec.source_files = 'APPropertyWrappers/Core/**/*'
