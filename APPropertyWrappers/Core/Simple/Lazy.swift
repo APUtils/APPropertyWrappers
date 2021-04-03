@@ -13,7 +13,7 @@ open class Lazy<V> {
     
     private var storedValue: V?
     
-    open var lazyValue: () -> V {
+    open var projectedValue: () -> V {
         didSet {
             storedValue = nil
         }
@@ -24,7 +24,7 @@ open class Lazy<V> {
             if let storedValue = storedValue {
                 return storedValue
             } else {
-                let value = lazyValue()
+                let value = projectedValue()
                 storedValue = value
                 return value
             }
@@ -34,8 +34,8 @@ open class Lazy<V> {
         }
     }
     
-    public init(lazyValue: @autoclosure @escaping () -> V) {
-        self.lazyValue = lazyValue
+    public init(projectedValue: @autoclosure @escaping () -> V) {
+        self.projectedValue = projectedValue
     }
 }
 

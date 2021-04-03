@@ -49,7 +49,7 @@ open class UserDefault<V> {
         }
         
         self.key = key
-        self._defferedDefaultValue = Lazy(lazyValue: defferedDefaultValue())
+        self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
     }
 }
 

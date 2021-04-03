@@ -69,9 +69,9 @@ open class UserDefaultCodable<V: Codable> {
         }
         
         self.key = key
-        self._defferedDefaultValue = Lazy(lazyValue: defferedDefaultValue())
+        self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
         
-        self._storage = Lazy(lazyValue: { () -> V in
+        self._storage = Lazy(projectedValue: { () -> V in
             do {
                 return try UserDefaults.standard.getCodableValue(type: Box.self, forKey: key)?.value ?? defferedDefaultValue()
             } catch {
