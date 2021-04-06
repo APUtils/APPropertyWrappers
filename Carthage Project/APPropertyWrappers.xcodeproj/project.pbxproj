@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D54D7ED261C110300F6814C /* BoolPreserved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54D7EC261C110300F6814C /* BoolPreserved.swift */; };
+		0D54D856261C1C3D00F6814C /* BoolPreserved_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D54D855261C1C3D00F6814C /* BoolPreserved_Spec.swift */; };
 		0D5A7DAA23B4FB0700E0687B /* LateInitialized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */; };
 		0D5A7DAB23B4FB0700E0687B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7DA723B4FB0700E0687B /* UserDefault.swift */; };
 		0D5A7DAE23B4FBBA00E0687B /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; };
@@ -50,7 +51,6 @@
 		E2A739532260CFC700E97D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739512260CFC700E97D55 /* Main.storyboard */; };
 		E2A739552260CFC800E97D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A739542260CFC800E97D55 /* Assets.xcassets */; };
 		E2A739582260CFC800E97D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A739562260CFC800E97D55 /* LaunchScreen.storyboard */; };
-		E2A739632260CFC800E97D55 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A739622260CFC800E97D55 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +106,7 @@
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0D20D5552606A08800767851 /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
 		0D54D7EC261C110300F6814C /* BoolPreserved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPreserved.swift; sourceTree = "<group>"; };
+		0D54D855261C1C3D00F6814C /* BoolPreserved_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPreserved_Spec.swift; sourceTree = "<group>"; };
 		0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateInitialized.swift; sourceTree = "<group>"; };
 		0D5A7DA723B4FB0700E0687B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultCodable.swift; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		E2A739572260CFC800E97D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A739592260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A7395E2260CFC800E97D55 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2A739622260CFC800E97D55 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		E2A739642260CFC800E97D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A7396C2260D99900E97D55 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -196,6 +196,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D54D854261C1C2B00F6814C /* _Specs */ = {
+			isa = PBXGroup;
+			children = (
+				0D54D855261C1C3D00F6814C /* BoolPreserved_Spec.swift */,
+			);
+			path = _Specs;
+			sourceTree = "<group>";
+		};
 		0DE114292605F83A00D75ADA /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,10 +326,10 @@
 		E2A739612260CFC800E97D55 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0D54D854261C1C2B00F6814C /* _Specs */,
 				E2C3136922DF77F300D6797A /* __FailureDiffs */,
 				E2C3136822DF77F300D6797A /* __ReferenceImages */,
 				E2A739642260CFC800E97D55 /* Info.plist */,
-				E2A739622260CFC800E97D55 /* Tests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -579,7 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A739632260CFC800E97D55 /* Tests.swift in Sources */,
+				0D54D856261C1C3D00F6814C /* BoolPreserved_Spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

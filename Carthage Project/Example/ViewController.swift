@@ -21,7 +21,7 @@ final class ViewController: UIViewController {
     @UserDefaultCodable(key: "ViewController_runCounter", defaultValue: 0)
     var runCounter: Int
     
-    @BoolPreserved(key: "ViewController_crashed")
+    @BoolPreserved(key: "ViewController_crashed", defaultValue: false)
     var crashed: Bool
     
     // ******************************* MARK: - Initialization and Setup
@@ -39,10 +39,11 @@ final class ViewController: UIViewController {
             print("The app crashed previously!")
             crashed = false
             
-        } else {
-            print("Crashing!")
-            crashed = true
-            exit(0)
         }
+//        else {
+//            print("Crashing!")
+//            crashed = true
+//            exit(0)
+//        }
     }
 }

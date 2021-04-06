@@ -38,14 +38,17 @@ open class BoolPreserved {
             }
         }
         set {
-            if invert && newValue {
+            // We assume `true` as a presence of file if there is no inversion.
+            // Using xOR logical operation here.
+            if newValue != invert {
+                FileManager.default.createFile(atPath: path, contents: nil, attributes: nil)
+                
+            } else {
                 do {
                     try FileManager.default.removeItem(atPath: path)
                 } catch {
                     RoutableLogger.logError("Unable to set BoolPreserved flag", error: error, data: ["path": path, "value": newValue, "documentsURL": Self.documentsURL])
                 }
-            } else {
-                FileManager.default.createFile(atPath: path, contents: nil, attributes: nil)
             }
         }
     }
@@ -53,6 +56,15 @@ open class BoolPreserved {
     public init(key: String, defaultValue: Bool) {
         self.invert = defaultValue
         self.path = Self.documentsURL.appendingPathComponent("BoolPreserved_\(key)").path
+    }
+    
+    /// Resets value it's default.
+    public func reset() {
+        do {
+            try FileManager.default.removeItem(atPath: path)
+        } catch {
+            RoutableLogger.logError("Unable to set erase flag", error: error, data: ["path": path, "documentsURL": Self.documentsURL])
+        }
     }
 }
 
