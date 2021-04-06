@@ -23,26 +23,35 @@ open class BoolPreserved {
     
     private static let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     
+    /// By default file existense means `true` and absence is `false`
+    /// but if `defaultValue` of `true` was passed we invert this behavior.
+    private let invert: Bool
+    
     private let path: String
     
     open var wrappedValue: Bool {
         get {
-            FileManager.default.fileExists(atPath: path)
+            if invert {
+                return !FileManager.default.fileExists(atPath: path)
+            } else {
+                return FileManager.default.fileExists(atPath: path)
+            }
         }
         set {
-            if newValue {
-                FileManager.default.createFile(atPath: path, contents: nil, attributes: nil)
-            } else {
+            if invert && newValue {
                 do {
                     try FileManager.default.removeItem(atPath: path)
                 } catch {
                     RoutableLogger.logError("Unable to set BoolPreserved flag", error: error, data: ["path": path, "value": newValue, "documentsURL": Self.documentsURL])
                 }
+            } else {
+                FileManager.default.createFile(atPath: path, contents: nil, attributes: nil)
             }
         }
     }
     
-    public init(key: String) {
+    public init(key: String, defaultValue: Bool) {
+        self.invert = defaultValue
         self.path = Self.documentsURL.appendingPathComponent("BoolPreserved_\(key)").path
     }
 }
