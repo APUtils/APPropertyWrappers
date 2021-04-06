@@ -21,6 +21,9 @@ final class ViewController: UIViewController {
     @UserDefaultCodable(key: "ViewController_runCounter", defaultValue: 0)
     var runCounter: Int
     
+    @BoolPreserved(key: "ViewController_crashed")
+    var crashed: Bool
+    
     // ******************************* MARK: - Initialization and Setup
     
     override func viewDidLoad() {
@@ -31,5 +34,15 @@ final class ViewController: UIViewController {
         
         viewModel = "viewModel"
         print(viewModel)
+        
+        if crashed {
+            print("The app crashed previously!")
+            crashed = false
+            
+        } else {
+            print("Crashing!")
+            crashed = true
+            exit(0)
+        }
     }
 }
