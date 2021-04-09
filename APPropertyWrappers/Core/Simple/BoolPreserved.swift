@@ -38,6 +38,9 @@ open class BoolPreserved {
             }
         }
         set {
+            // Prevents errors
+            guard newValue != wrappedValue else { return }
+            
             // We assume `true` as a presence of file if there is no inversion.
             // Using xOR logical operation here.
             if newValue != invert {
