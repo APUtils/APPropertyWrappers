@@ -1,23 +1,20 @@
 PODS:
-  - APPropertyWrappers (2.1.2):
-    - APPropertyWrappers/Core (= 2.1.2)
-    - APPropertyWrappers/RxSwift (= 2.1.2)
   - APPropertyWrappers/Core (2.1.2):
     - LogsManager/RoutableLogger (>= 9.1.5)
   - APPropertyWrappers/RxSwift (2.1.2):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
-  - LogsManager/RoutableLogger (9.1.5)
-  - RxCocoa (6.1.0):
-    - RxRelay (= 6.1.0)
-    - RxSwift (= 6.1.0)
-  - RxRelay (6.1.0):
-    - RxSwift (= 6.1.0)
-  - RxSwift (6.1.0)
+  - LogsManager/RoutableLogger (9.1.8)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
 
 DEPENDENCIES:
-  - APPropertyWrappers (from `../`)
+  - APPropertyWrappers/RxSwift (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -31,12 +28,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APPropertyWrappers: 2d9e9643632f3a178b7ccbff0f5280ddb6a7129e
-  LogsManager: e821cea87e608e96cf39a68009d830579098a2cb
-  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
-  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
-  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  APPropertyWrappers: cb94b49dcaa47937748600d70ab773f379ae1b4c
+  LogsManager: 1dfa84fa133ba22076e7a95fcc8276a0e57673c9
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: 11220db83ccefd713a010a6c33c984e4683e38c5
+PODFILE CHECKSUM: d00a2be8888f9b6a5e4bdffaaeb9b573e4d883a0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

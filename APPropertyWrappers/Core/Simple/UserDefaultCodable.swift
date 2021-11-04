@@ -57,23 +57,25 @@ open class UserDefaultCodable<V: Codable> {
     }
     
     public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
+        let userDefaults: UserDefaults
         if let suitName = suitName {
-            if let userDefaults = UserDefaults(suiteName: suitName) {
-                self.userDefaults = userDefaults
+            if let _userDefaults = UserDefaults(suiteName: suitName) {
+                userDefaults = _userDefaults
             } else {
                 RoutableLogger.logError("Unable to initialize user defaults", data: ["suitName": suitName])
-                self.userDefaults = UserDefaults.standard
+                userDefaults = .standard
             }
         } else {
-            self.userDefaults = UserDefaults.standard
+            userDefaults = .standard
         }
+        self.userDefaults = userDefaults
         
         self.key = key
         self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
         
         self._storage = Lazy(projectedValue: { () -> V in
             do {
-                return try UserDefaults.standard.getCodableValue(type: Box.self, forKey: key)?.value ?? defferedDefaultValue()
+                return try userDefaults.getCodableValue(type: Box.self, forKey: key)?.value ?? defferedDefaultValue()
             } catch {
                 RoutableLogger.logError("Unable to get codable value from UserDefaults", error: error, data: ["type": V.self, "key": key, "defaultValue": defferedDefaultValue])
                 return defferedDefaultValue()

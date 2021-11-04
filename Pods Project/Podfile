@@ -5,7 +5,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'APPropertyWrappers_Example' do
-    pod 'APPropertyWrappers', :path => '../'
+    pod 'APPropertyWrappers/RxSwift', :path => '../'
 end
 
 post_install do |installer|

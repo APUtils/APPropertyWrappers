@@ -22,9 +22,21 @@ open class UserDefault<V> {
     private let key: String
     @Lazy private var defferedDefaultValue: V
     
+    /// Storage that is used to prevent continuous object decode and so to speedup property access.
+    @Lazy private var storage: V
+    
     open var wrappedValue: V {
-        get { return userDefaults.object(forKey: key) as? V ?? defferedDefaultValue }
-        set { userDefaults.set(newValue, forKey: key) }
+        get {
+            storage
+        }
+        set {
+            storage = newValue
+            if (newValue as AnyObject) is NSNull {
+                userDefaults.removeObject(forKey: key)
+            } else {
+                userDefaults.set(newValue, forKey: key)
+            }
+        }
     }
     
     /// Removes object from the UserDefaults
@@ -37,19 +49,26 @@ open class UserDefault<V> {
     }
     
     public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
+        let userDefaults: UserDefaults
         if let suitName = suitName {
-            if let userDefaults = UserDefaults(suiteName: suitName) {
-                self.userDefaults = userDefaults
+            if let _userDefaults = UserDefaults(suiteName: suitName) {
+                userDefaults = _userDefaults
             } else {
                 RoutableLogger.logError("Unable to initialize user defaults", data: ["suitName": suitName])
-                self.userDefaults = UserDefaults.standard
+                userDefaults = .standard
             }
         } else {
-            self.userDefaults = UserDefaults.standard
+            userDefaults = .standard
         }
+        self.userDefaults = userDefaults
         
         self.key = key
         self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
+        
+        
+        self._storage = Lazy(projectedValue: { () -> V in
+            userDefaults.object(forKey: key) as? V ?? defferedDefaultValue()
+        }())
     }
 }
 
