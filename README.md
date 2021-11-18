@@ -21,7 +21,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/APPropertyWrappers" ~> 2.0
+github "APUtils/APPropertyWrappers" ~> 3.0
 ```
 
 You should later add both `APPropertyWrappers` and `RoutableLogger` frameworks to your project.
@@ -32,13 +32,13 @@ APPropertyWrappers is available through [CocoaPods](http://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APPropertyWrappers', '~> 2.0'
+pod 'APPropertyWrappers', '~> 3.0'
 ```
 
 To add `RxSwift` property wrappers additionally add:
 
 ```ruby
-pod 'APPropertyWrappers/RxSwift', '~> 2.0'
+pod 'APPropertyWrappers/RxSwift', '~> 3.0'
 ```
 
 ## Usage

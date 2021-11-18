@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APPropertyWrappers'
-  s.version          = '2.1.2'
+  s.version          = '3.0.0'
   s.summary          = 'Simple and complex property wrappers for native Swift and for RxSwift.'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
 
   s.subspec 'Core' do |subspec|
     subspec.source_files = 'APPropertyWrappers/Core/**/*'
-    subspec.dependency 'LogsManager/RoutableLogger', '>= 9.1.5'
+    subspec.dependency 'RoutableLogger', '>= 9.1.5'
   end
 
   s.subspec 'RxSwift' do |subspec|

@@ -41,7 +41,7 @@ else
     fi
 fi
 
-set -o pipefail && xcodebuild -project "Carthage Project/APPropertyWrappers.xcodeproj" -sdk iphonesimulator -scheme "Example" -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
+set -o pipefail && xcodebuild -workspace "Pods Project/APPropertyWrappers.xcworkspace" -scheme "APPropertyWrappers-Example" -sdk iphonesimulator -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
 
 echo ""
 echo "SUCCESS!"

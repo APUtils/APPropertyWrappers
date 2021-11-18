@@ -7,12 +7,7 @@
 //
 
 import Foundation
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 /// Property wrapper that stores codable value as data in UserDefaults.
 @propertyWrapper

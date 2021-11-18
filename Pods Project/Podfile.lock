@@ -1,11 +1,23 @@
 PODS:
-  - APPropertyWrappers/Core (2.1.2):
-    - LogsManager/RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (2.1.2):
+  - APPropertyWrappers/Core (3.0.0):
+    - RoutableLogger (>= 9.1.5)
+  - APPropertyWrappers/RxSwift (3.0.0):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
-  - LogsManager/RoutableLogger (9.1.8)
+  - iOSSnapshotTestCase (8.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
+  - iOSSnapshotTestCase/Core (8.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (8.0.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (9.2.1)
+  - Nimble-Snapshots (9.3.0):
+    - Nimble-Snapshots/Core (= 9.3.0)
+  - Nimble-Snapshots/Core (9.3.0):
+    - iOSSnapshotTestCase (~> 8.0)
+    - Nimble
+  - Quick (4.0.0)
+  - RoutableLogger (9.1.12)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -15,10 +27,17 @@ PODS:
 
 DEPENDENCIES:
   - APPropertyWrappers/RxSwift (from `../`)
+  - Nimble
+  - Nimble-Snapshots
+  - Quick
 
 SPEC REPOS:
   trunk:
-    - LogsManager
+    - iOSSnapshotTestCase
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
+    - RoutableLogger
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -28,12 +47,16 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APPropertyWrappers: cb94b49dcaa47937748600d70ab773f379ae1b4c
-  LogsManager: 1dfa84fa133ba22076e7a95fcc8276a0e57673c9
+  APPropertyWrappers: 811d0b0929d49b2c6d350c148801c9c2988f3bc3
+  iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Nimble-Snapshots: 97270cd48f0e6eebd6c80ccf7dd35d4e57fb9997
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: d00a2be8888f9b6a5e4bdffaaeb9b573e4d883a0
+PODFILE CHECKSUM: ca5b762e44c283c42e6ad99a5a4d429830bc81db
 
 COCOAPODS: 1.11.2

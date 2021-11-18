@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0D3CD34B274611F0000AFFB6"
+               BuildableName = "APPropertyWrappers_Tests.xctest"
+               BlueprintName = "APPropertyWrappers_Tests"
+               ReferencedContainer = "container:APPropertyWrappers.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

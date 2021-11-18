@@ -1,11 +1,20 @@
 # Deployment Target
-platform :ios, '9.0'
+platform :ios, '11.0'
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
 
 # Add pods as frameworks so we could add obj-c and swift 3.0 pods
 use_frameworks!
 
 target 'APPropertyWrappers_Example' do
     pod 'APPropertyWrappers/RxSwift', :path => '../'
+    
+    target 'APPropertyWrappers_Tests' do
+      inherit! :search_paths
+      
+      pod 'Quick'
+      pod 'Nimble'
+      pod 'Nimble-Snapshots'
+    end
 end
 
 post_install do |installer|

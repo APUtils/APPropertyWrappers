@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.0.0)
+Released on 11/18/2021.
+
+#### Added
+- BoolPreserved property wrapper
+
+#### Changed
+- Lazy .lazyValue -> .projectedValue
+- Migrated to RoutableLogger
+- Use storage for UserDefault to speedup save/load
+
+#### Fixed
+- Fixed UserDefault and UserDefaultCodable suit usage with storage
+- Handle UserDefault optional types
+
+
 ## [2.0.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/2.0.0)
 Released on 03/20/2021.
 

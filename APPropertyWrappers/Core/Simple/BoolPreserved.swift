@@ -7,12 +7,7 @@
 //
 
 import Foundation
-
-#if COCOAPODS
-import LogsManager
-#else
 import RoutableLogger
-#endif
 
 /// Uses file existence to preserve flag. More robust than `@UserDefaul` because the
 /// flag set is atomic and doesn't require synchronization.
