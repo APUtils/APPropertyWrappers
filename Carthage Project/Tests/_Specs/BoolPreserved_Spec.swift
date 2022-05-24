@@ -67,4 +67,3 @@ class BoolPreserved_Spec: QuickSpec {
         }
     }
 }
-

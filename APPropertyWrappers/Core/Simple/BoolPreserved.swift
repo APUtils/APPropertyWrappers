@@ -56,7 +56,7 @@ open class BoolPreserved {
         self.path = Self.documentsURL.appendingPathComponent("BoolPreserved_\(key)").path
     }
     
-    /// Resets value it's default.
+    /// Resets value to its default.
     public func reset() {
         do {
             try FileManager.default.removeItem(atPath: path)

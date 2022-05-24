@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D3CD35727461221000AFFB6 /* BoolPreserved_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */; };
+		0DF75932283D5318000E93EF /* FilePreserved_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolPreserved_Spec.swift; sourceTree = "<group>"; };
 		0DE114522606111000D75ADA /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0DE1517D26065FBB0067545C /* podPush.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreserved_Spec.swift; sourceTree = "<group>"; };
 		3BAB050FA5F151A6C9641585 /* Pods-APPropertyWrappers_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.release.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* APPropertyWrappers_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPropertyWrappers_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */,
+				0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */,
 			);
 			name = _Specs;
 			path = "../../Carthage Project/Tests/_Specs";
@@ -222,7 +225,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0D3CD34B274611F0000AFFB6 = {
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3CD35727461221000AFFB6 /* BoolPreserved_Spec.swift in Sources */,
+				0DF75932283D5318000E93EF /* FilePreserved_Spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,6 +96,9 @@
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0D20D5552606A08800767851 /* podUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
+		0D210AA5274B0481000F68DF /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
+		0D210AA6274B0481000F68DF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = ../Cartfile.resolved; sourceTree = "<group>"; };
+		0D210AA7274B0481000F68DF /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.private; path = ../Cartfile.private; sourceTree = "<group>"; };
 		0D54D7EC261C110300F6814C /* BoolPreserved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPreserved.swift; sourceTree = "<group>"; };
 		0D54D855261C1C3D00F6814C /* BoolPreserved_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPreserved_Spec.swift; sourceTree = "<group>"; };
 		0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateInitialized.swift; sourceTree = "<group>"; };
@@ -246,6 +249,9 @@
 		1834AC72A69DC91E1F3B8EDA /* _Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				0D210AA5274B0481000F68DF /* Cartfile */,
+				0D210AA7274B0481000F68DF /* Cartfile.private */,
+				0D210AA6274B0481000F68DF /* Cartfile.resolved */,
 				75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */,
 				722BFDE9DE58393B9D916719 /* carthageRemove.command */,
 				27A65933230C2FF4F758F562 /* carthageUpdate.command */,
