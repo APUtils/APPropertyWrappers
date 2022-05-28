@@ -13,17 +13,22 @@ import RoutableLogger
 @propertyWrapper
 open class FilePreserved {
     
+    public typealias Transform = (String?) -> (String?)
+    
     private static let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     private let url: URL
+    private let setTransform: Transform
+    private let getTransform: Transform
     
     /// Storage that is used to prevent continuous object read from file and so to speedup property access.
     private var storage: String?
     
     open var wrappedValue: String? {
         get {
-            storage
+            getTransform(storage)
         }
         set {
+            let newValue = setTransform(newValue)
             guard newValue != storage else { return }
             
             storage = newValue
@@ -49,8 +54,13 @@ open class FilePreserved {
         }
     }
     
-    public init(key: String) {
+    public init(key: String,
+                setTransform: @escaping Transform = { $0 },
+                getTransform: @escaping Transform = { $0 }) {
+        
         self.url = Self.documentsURL.appendingPathComponent("FilePreserved_\(key)")
+        self.setTransform = setTransform
+        self.getTransform = getTransform
         
         if FileManager.default.fileExists(atPath: url.path) {
             let data: Data

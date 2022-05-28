@@ -23,23 +23,23 @@ class FilePreserved_Spec: QuickSpec {
             
             context("when using false as default value") {
                 beforeEach {
-                    preserved = FilePreserved(key: "FilePreserved_Spec_spec", defaultValue: "false")
+                    preserved = FilePreserved(key: "FilePreserved_Spec_spec")
                 }
                 
                 it("should work properly") {
-                    expect(preserved.wrappedValue) == "false"
+                    expect(preserved.wrappedValue) == nil
                     
                     preserved.wrappedValue = "true"
                     expect(preserved.wrappedValue) == "true"
                     
-                    preserved = FilePreserved(key: "FilePreserved_Spec_spec", defaultValue: "false")
+                    preserved = FilePreserved(key: "FilePreserved_Spec_spec")
                     expect(preserved.wrappedValue) == "true"
                     
                     preserved.wrappedValue = "false"
                     expect(preserved.wrappedValue) == "false"
                     
                     preserved.reset()
-                    expect(preserved.wrappedValue) == "false"
+                    expect(preserved.wrappedValue) == nil
                     
                     preserved.wrappedValue = "false"
                     expect(preserved.wrappedValue) == "false"
