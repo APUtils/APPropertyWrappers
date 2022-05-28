@@ -17,9 +17,9 @@ open class FilePreserved {
     private let url: URL
     
     /// Storage that is used to prevent continuous object read from file and so to speedup property access.
-    private var storage: String
+    private var storage: String?
     
-    open var wrappedValue: String {
+    open var wrappedValue: String? {
         get {
             storage
         }
@@ -27,19 +27,29 @@ open class FilePreserved {
             guard newValue != storage else { return }
             
             storage = newValue
-            if let data = newValue.data(using: .utf8) {
-                do {
-                    try data.write(to: url)
-                } catch {
-                    RoutableLogger.logError("Unable to set new value. Data write failed.", error: error, data: ["url": url, "data": data, "documentsURL": Self.documentsURL])
+            if let newValue = newValue {
+                if let data = newValue.data(using: .utf8) {
+                    do {
+                        try data.write(to: url)
+                    } catch {
+                        RoutableLogger.logError("Unable to set new value. Data write failed.", error: error, data: ["url": url, "data": data])
+                    }
+                } else {
+                    RoutableLogger.logError("Unable to set new value. Data conversion failed.", data: ["url": url])
                 }
             } else {
-                RoutableLogger.logError("Unable to set new value. Data conversion failed.", data: ["url": url, "documentsURL": Self.documentsURL])
+                if FileManager.default.fileExists(atPath: url.path) {
+                    do {
+                        try FileManager.default.removeItem(at: url)
+                    } catch {
+                        RoutableLogger.logError("Unable to remove existing file. Preserved data was not removed.", error: error, data: ["url": url])
+                    }
+                }
             }
         }
     }
     
-    public init(key: String, defaultValue: String) {
+    public init(key: String) {
         self.url = Self.documentsURL.appendingPathComponent("FilePreserved_\(key)")
         
         if FileManager.default.fileExists(atPath: url.path) {
@@ -47,22 +57,18 @@ open class FilePreserved {
             do {
                 data = try Data(contentsOf: url)
             } catch {
-                RoutableLogger.logError("Unable to get data from file. Falling back to default value.", error: error, data: ["key": key, "url": url, "documentsURL": Self.documentsURL])
-                storage = defaultValue
+                RoutableLogger.logError("Unable to get data from existing file. Preserved data was not restored.", error: error, data: ["key": key, "url": url])
                 return
             }
             
             if let string = String(data: data, encoding: .utf8) {
                 storage = string
             } else {
-                RoutableLogger.logError("Unable to decode preserved data. Falling back to default value.", data: ["key": key, "url": url, "documentsURL": Self.documentsURL, "data": data])
-                storage = defaultValue
+                RoutableLogger.logError("Unable to decode preserved data. Preserved data was not restored.", data: ["key": key, "url": url, "data": data])
             }
             
         } else {
-            storage = defaultValue
-            let data = defaultValue.data(using: .utf8)
-            try? data?.write(to: url)
+            storage = nil
         }
     }
     
@@ -70,8 +76,9 @@ open class FilePreserved {
     public func reset() {
         do {
             try FileManager.default.removeItem(at: url)
+            storage = nil
         } catch {
-            RoutableLogger.logError("Unable to reset preserved data", error: error, data: ["url": url, "documentsURL": Self.documentsURL])
+            RoutableLogger.logError("Unable to reset preserved data", error: error, data: ["url": url])
         }
     }
 }
