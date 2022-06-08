@@ -42,9 +42,15 @@ open class UserDefaultCodable<V: Codable> {
         }
     }
     
-    /// Removes object from the UserDefaults
+    /// Removes object from the UserDefaults but preserves it in the storage
     open func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)
+    }
+    
+    /// Resets preserved value to its default.
+    open func reset() {
+        removeFromUserDefaults()
+        _storage.projectedValue = _defferedDefaultValue.projectedValue
     }
     
     public convenience init(suitName: String? = nil, key: String, defaultValue: V) {
