@@ -1,10 +1,14 @@
 PODS:
-  - APPropertyWrappers/Core (3.0.0):
+  - APExtensions/Occupiable (10.1.8)
+  - APExtensions/OptionalType (10.1.8)
+  - APPropertyWrappers/Core (3.1.0):
+    - APExtensions/OptionalType
     - RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (3.0.0):
+  - APPropertyWrappers/RxSwift (3.1.0):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
+    - RxUtils (~> 4.0.0)
   - iOSSnapshotTestCase (8.0.0):
     - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
   - iOSSnapshotTestCase/Core (8.0.0)
@@ -17,13 +21,28 @@ PODS:
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble
   - Quick (5.0.1)
-  - RoutableLogger (9.1.12)
+  - RoutableLogger (11.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - RxSwiftExt (6.0.1):
+    - RxSwiftExt/Core (= 6.0.1)
+    - RxSwiftExt/RxCocoa (= 6.0.1)
+  - RxSwiftExt/Core (6.0.1):
+    - RxSwift (~> 6.0)
+  - RxSwiftExt/RxCocoa (6.0.1):
+    - RxCocoa (~> 6.0)
+    - RxSwiftExt/Core
+  - RxUtils (4.0.0):
+    - APExtensions/Occupiable (~> 10.1.6)
+    - APExtensions/OptionalType (~> 10.1.6)
+    - RoutableLogger (>= 9.1.5)
+    - RxCocoa (~> 6)
+    - RxSwift (~> 6)
+    - RxSwiftExt (~> 6)
 
 DEPENDENCIES:
   - APPropertyWrappers/RxSwift (from `../`)
@@ -33,6 +52,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - APExtensions
     - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
@@ -41,21 +61,26 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxSwiftExt
+    - RxUtils
 
 EXTERNAL SOURCES:
   APPropertyWrappers:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APPropertyWrappers: 811d0b0929d49b2c6d350c148801c9c2988f3bc3
+  APExtensions: 779d37ae592fd4f4b3f7ad91aa840a634ee89adf
+  APPropertyWrappers: a2c3ae7ece2d73eb1f415935cf98f8ed884d6332
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
+  RoutableLogger: 70188daca734d067967e4f464450582ca189b4d5
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
+  RxUtils: b27cb3104d0091565dd80445007a125af0d94309
 
 PODFILE CHECKSUM: ca5b762e44c283c42e6ad99a5a4d429830bc81db
 
