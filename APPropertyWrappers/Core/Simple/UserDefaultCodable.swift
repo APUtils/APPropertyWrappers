@@ -9,55 +9,70 @@
 import Foundation
 import RoutableLogger
 
-/// Property wrapper that stores codable value as data in UserDefaults.
+/// Property wrapper that stores codable value as data in `UserDefaults`.
+/// - Tag: UserDefaultCodable
 @propertyWrapper
-open class UserDefaultCodable<V: Codable> {
+public final class UserDefaultCodable<V: Codable> {
     
     // ******************************* MARK: - Box
     
     public struct Box: Codable {
-        let value: V
+        public let value: V
+        public init(value: V) {
+            self.value = value
+        }
     }
     
     // ******************************* MARK: - Properties
     
-    private let userDefaults: UserDefaults
-    private let key: String
-    @Lazy private var defferedDefaultValue: V
+    fileprivate let userDefaults: UserDefaults
+    fileprivate let useStorage: Bool
+    fileprivate let key: String
+    @Lazy fileprivate var defaultValue: V
     
     /// Storage that is used to prevent continuous object decode and so to speedup property access.
-    @Lazy private var storage: V
+    @Lazy fileprivate var storage: V
     
-    open var wrappedValue: V {
+    public var wrappedValue: V {
         get {
-            storage
+            if useStorage {
+                return storage
+            } else {
+                return Self.getValue(userDefaults: userDefaults, key: key, defaultValue: defaultValue)
+            }
         }
         set {
-            storage = newValue
+            if useStorage {
+                storage = newValue
+            }
+            
             do {
-                try UserDefaults.standard.setCodableValue(type: Box.self, value: Box(value: newValue), forKey: key)
+                try userDefaults.setCodableValue(type: Box.self, value: Box(value: newValue), forKey: key)
             } catch {
-                RoutableLogger.logError("Unable to set codable value for UserDefaults", error: error, data: ["type": V.self, "value": newValue, "key": key, "defaultValue": defferedDefaultValue])
+                RoutableLogger.logError("Unable to set codable value for UserDefaults", error: error, data: ["type": V.self, "value": newValue, "key": key, "defaultValue": defaultValue])
             }
         }
     }
     
     /// Removes object from the UserDefaults but preserves it in the storage
-    open func removeFromUserDefaults() {
+    public func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)
     }
     
     /// Resets preserved value to its default.
-    open func reset() {
+    public func reset() {
         removeFromUserDefaults()
-        _storage.projectedValue = _defferedDefaultValue.projectedValue
+        
+        if useStorage {
+            _storage.projectedValue = _defaultValue.projectedValue
+        }
     }
     
-    public convenience init(suitName: String? = nil, key: String, defaultValue: V) {
-        self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue)
+    public convenience init(suitName: String? = nil, useStorage: Bool = true, key: String, defaultValue: V) {
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defferedDefaultValue: defaultValue)
     }
     
-    public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
+    public init(suitName: String? = nil, useStorage: Bool = true, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
         let userDefaults: UserDefaults
         if let suitName = suitName {
             if let _userDefaults = UserDefaults(suiteName: suitName) {
@@ -71,37 +86,56 @@ open class UserDefaultCodable<V: Codable> {
         }
         self.userDefaults = userDefaults
         
+        self.useStorage = useStorage
         self.key = key
-        self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
+        _defaultValue = Lazy(projectedValue: defferedDefaultValue())
         
-        self._storage = Lazy(projectedValue: { () -> V in
-            do {
-                return try userDefaults.getCodableValue(type: Box.self, forKey: key)?.value ?? defferedDefaultValue()
-            } catch {
-                RoutableLogger.logError("Unable to get codable value from UserDefaults", error: error, data: ["type": V.self, "key": key, "defaultValue": defferedDefaultValue])
-                return defferedDefaultValue()
-            }
-        }())
+        if useStorage {
+            _storage = Lazy(projectedValue: { () -> V in
+                Self.getValue(userDefaults: userDefaults, key: key, defaultValue: defferedDefaultValue())
+            }())
+        } else {
+            _storage = Lazy(projectedValue: { () -> V in
+                fatalError("Storage should not be used")
+            }())
+        }
+    }
+    
+    static func getValue(userDefaults: UserDefaults, key: String, defaultValue: V) -> V {
+        do {
+            return try userDefaults.getCodableValue(type: Box.self, forKey: key)?.value ?? defaultValue
+        } catch {
+            RoutableLogger.logError("Unable to get codable value from UserDefaults", error: error, data: ["type": V.self, "key": key, "defaultValue": defaultValue])
+            return defaultValue
+        }
     }
 }
 
 // ******************************* MARK: - Convenience Inits
 
 public extension UserDefaultCodable where V: ExpressibleByNilLiteral {
-    convenience init(suitName: String? = nil, key: String) {
-        self.init(suitName: suitName, key: key, defaultValue: nil)
+    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: nil)
     }
 }
 
 public extension UserDefaultCodable where V: ExpressibleByArrayLiteral {
-    convenience init(suitName: String? = nil, key: String) {
-        self.init(suitName: suitName, key: key, defaultValue: [])
+    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [])
     }
 }
 
 public extension UserDefaultCodable where V: ExpressibleByDictionaryLiteral {
-    convenience init(suitName: String? = nil, key: String) {
-        self.init(suitName: suitName, key: key, defaultValue: [:])
+    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [:])
+    }
+}
+
+// ******************************* MARK: - Equatable
+
+extension UserDefaultCodable: Equatable where V: Equatable {
+    public static func == (lhs: UserDefaultCodable<V>, rhs: UserDefaultCodable<V>) -> Bool {
+        lhs.wrappedValue == rhs.wrappedValue
     }
 }
 
