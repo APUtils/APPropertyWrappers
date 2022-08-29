@@ -45,6 +45,7 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
     subspec.dependency 'APPropertyWrappers/Core'
     subspec.dependency 'RxCocoa'
     subspec.dependency 'RxSwift'
+    subspec.dependency 'RxUtils'
   end
   
 end
