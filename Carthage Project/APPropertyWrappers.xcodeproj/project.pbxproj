@@ -14,6 +14,8 @@
 		0D5A7DAE23B4FBBA00E0687B /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; };
 		0D5A7DB323B4FC0300E0687B /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D89233D23B8F7B8004F625D /* UserDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */; };
+		0DBFAB13291C9A92005E444B /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFAB12291C9A92005E444B /* Atomic.swift */; };
+		0DBFAB15291C9AA2005E444B /* FilePreserved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFAB14291C9AA2005E444B /* FilePreserved.swift */; };
 		0DE1142D2605F85600D75ADA /* BehaviorRelayProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */; };
 		0DE114302605FC2800D75ADA /* ObservableProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */; };
 		0DE1143A2605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */; };
@@ -104,6 +106,8 @@
 		0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateInitialized.swift; sourceTree = "<group>"; };
 		0D5A7DA723B4FB0700E0687B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultCodable.swift; sourceTree = "<group>"; };
+		0DBFAB12291C9A92005E444B /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
+		0DBFAB14291C9AA2005E444B /* FilePreserved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePreserved.swift; sourceTree = "<group>"; };
 		0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorRelayProjected.swift; sourceTree = "<group>"; };
 		0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProjected.swift; sourceTree = "<group>"; };
 		0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_BehaviorRelayProjected.swift; sourceTree = "<group>"; };
@@ -217,11 +221,13 @@
 		0DE1142B2605F84A00D75ADA /* Simple */ = {
 			isa = PBXGroup;
 			children = (
+				0DBFAB12291C9A92005E444B /* Atomic.swift */,
+				0D54D7EC261C110300F6814C /* BoolPreserved.swift */,
+				0DBFAB14291C9AA2005E444B /* FilePreserved.swift */,
 				0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */,
+				E265E9BB23E1C9F7008C08C7 /* Lazy.swift */,
 				0D5A7DA723B4FB0700E0687B /* UserDefault.swift */,
 				0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */,
-				E265E9BB23E1C9F7008C08C7 /* Lazy.swift */,
-				0D54D7EC261C110300F6814C /* BoolPreserved.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				0DE114462605FD1800D75ADA /* ObservableObserver.swift in Sources */,
 				0D5A7DAA23B4FB0700E0687B /* LateInitialized.swift in Sources */,
 				0DE1143C2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift in Sources */,
+				0DBFAB13291C9A92005E444B /* Atomic.swift in Sources */,
 				E265E9BC23E1C9F7008C08C7 /* Lazy.swift in Sources */,
 				0DE1142D2605F85600D75ADA /* BehaviorRelayProjected.swift in Sources */,
 				0DE1143D2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift in Sources */,
@@ -557,6 +564,7 @@
 				0D89233D23B8F7B8004F625D /* UserDefaultCodable.swift in Sources */,
 				0DE1144D26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift in Sources */,
 				0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */,
+				0DBFAB15291C9AA2005E444B /* FilePreserved.swift in Sources */,
 				0DE114412605FCA100D75ADA /* EquatableFilter.swift in Sources */,
 				0D5A7DAB23B4FB0700E0687B /* UserDefault.swift in Sources */,
 			);
