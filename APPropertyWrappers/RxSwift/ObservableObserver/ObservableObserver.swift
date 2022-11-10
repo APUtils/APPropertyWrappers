@@ -47,7 +47,7 @@ open class ObservableObserver<Element>: ObservableObserverType {
 // ******************************* MARK: - Extensions
 
 extension ObservableObserver {
-    open func accept(_ element: Element) {
+    public func accept(_ element: Element) {
         observer.onNext(element)
     }
 }
