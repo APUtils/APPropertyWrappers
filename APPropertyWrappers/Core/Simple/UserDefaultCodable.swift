@@ -183,9 +183,11 @@ private extension UserDefaults {
     
     func isPrimitiveType<T: Codable>(_ type: T.Type) -> Bool {
         
-        if #available(iOSApplicationExtension 14.0, iOS 14.0, *), type is Float16.Type {
+        #if os(iOS)
+        if #available(macOS 11.0, iOSApplicationExtension 14.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *), type is Float16.Type {
             return true
         }
+        #endif
         
         switch type {
         case is String.Type,

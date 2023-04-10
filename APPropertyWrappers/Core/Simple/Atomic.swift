@@ -6,6 +6,8 @@
 //  Copyright © 2022 Anton Plebanovich. All rights reserved.
 //
 
+import Darwin
+
 @propertyWrapper
 public struct Atomic<T> {
     

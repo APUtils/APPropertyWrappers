@@ -7,6 +7,7 @@
 
 ## Build generated
 build/
+.build
 DerivedData
 *.d
 *.dia
@@ -47,3 +48,5 @@ Pods Project/Pods/
 /Carthage/
 
 *.orig
+.swiftpm/
+/Packages

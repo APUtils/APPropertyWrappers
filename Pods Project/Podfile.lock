@@ -1,9 +1,9 @@
 PODS:
-  - APExtensions/Occupiable (10.1.8)
-  - APExtensions/OptionalType (10.1.8)
-  - APPropertyWrappers/Core (3.0.0):
+  - APExtensions/Occupiable (12.0.1)
+  - APExtensions/OptionalType (12.0.1)
+  - APPropertyWrappers/Core (3.1.0):
     - RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (3.0.0):
+  - APPropertyWrappers/RxSwift (3.1.0):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
@@ -20,7 +20,7 @@ PODS:
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble
   - Quick (5.0.1)
-  - RoutableLogger (11.0.0)
+  - RoutableLogger (12.0.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -35,13 +35,13 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxUtils (4.0.0):
-    - APExtensions/Occupiable (~> 10.1.6)
-    - APExtensions/OptionalType (~> 10.1.6)
+  - RxUtils (4.1.2):
+    - APExtensions/Occupiable (>= 11)
+    - APExtensions/OptionalType (>= 11)
     - RoutableLogger (>= 9.1.5)
-    - RxCocoa (~> 6)
-    - RxSwift (~> 6)
-    - RxSwiftExt (~> 6)
+    - RxCocoa (>= 6)
+    - RxSwift (>= 6)
+    - RxSwiftExt (>= 6)
 
 DEPENDENCIES:
   - APPropertyWrappers/RxSwift (from `../`)
@@ -68,19 +68,19 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 779d37ae592fd4f4b3f7ad91aa840a634ee89adf
-  APPropertyWrappers: edc989a2ff659d83b04bb10329251c3da8d807c9
+  APExtensions: a83d157a1bf42e97261f8139b39d97f9d2fe074a
+  APPropertyWrappers: 8a25747d86202ee9b26e44fb2bfc89d615268b9d
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  RoutableLogger: 70188daca734d067967e4f464450582ca189b4d5
+  RoutableLogger: 5437307106ecb12ede54836f575348694d1a7f19
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  RxUtils: b27cb3104d0091565dd80445007a125af0d94309
+  RxUtils: 6a2cb9222f549b2eb8bbaba60643c9c937021dba
 
-PODFILE CHECKSUM: 95e1ed373f4c5cc4744a93210a6875ef76f668f8
+PODFILE CHECKSUM: 1cb9a5451bda4407345f7acefb753b92942abedc
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

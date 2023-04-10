@@ -6,7 +6,12 @@
 //  Copyright © 2020 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APExtensionsOptionalType
+#else
 import APExtensions
+#endif
+
 import Foundation
 
 @propertyWrapper

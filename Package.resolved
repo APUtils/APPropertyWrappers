@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "APExtensions",
+        "repositoryURL": "https://github.com/APUtils/APExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "36f57c6992c481ca87a7cf63be23446a6f520d87",
+          "version": "12.0.3"
+        }
+      },
+      {
+        "package": "RoutableLogger",
+        "repositoryURL": "https://github.com/anton-plebanovich/RoutableLogger.git",
+        "state": {
+          "branch": null,
+          "revision": "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
+          "version": "6.5.0"
+        }
+      },
+      {
+        "package": "RxSwiftExt",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxSwiftExt.git",
+        "state": {
+          "branch": null,
+          "revision": "a42af9caeab63f2dbde318f1f3dc424f05871a37",
+          "version": "6.1.0"
+        }
+      },
+      {
+        "package": "RxUtils",
+        "repositoryURL": "https://github.com/APUtils/RxUtils.git",
+        "state": {
+          "branch": null,
+          "revision": "ccd07c0193b93c2ab9dd4faddfe32230ca09d3ad",
+          "version": "4.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

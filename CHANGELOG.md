@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.1.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.0)
+Released on 2023-04-10.
+
+#### Added
+- SPM support
+- [Atomic]
+- [EquatableFilter_BehaviorRelayProjected] init(projectedValue:compare:)
+- [EventsProcessor_EquatableFilter_ObservableObserverProjected]
+- [EventsProcessor_ObservableObserverProjected]
+- [EventsProcessor_ObservableProjected]
+- [FilePreserved]
+- [UserDefaultCodable] reset()
+- [UserDefaultCodable] suit value set fix
+- [UserDefaultCodable] `useStorage` init param
+- [UserDefault] reset()
+
+#### Fixed
+- [Lazy] multithreading fix
+
+
 ## [3.0.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.0.0)
 Released on 11/18/2021.
 

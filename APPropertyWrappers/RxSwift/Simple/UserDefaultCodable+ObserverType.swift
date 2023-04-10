@@ -6,6 +6,10 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+#if SPM
+import APPropertyWrappers
+#endif
+    
 import RxSwift
 
 extension UserDefaultCodable: ObserverType {

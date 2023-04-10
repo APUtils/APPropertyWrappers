@@ -6,23 +6,17 @@ base_dir=$(dirname "$0")
 cd "$base_dir"
 
 echo ""
-echo ""
-echo "Building Pods project..."
+
+echo -e "\nBuilding Swift Package for iOS..."
+swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios16.4-simulator"
+
+echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Pods Project/APPropertyWrappers.xcworkspace" -scheme "APPropertyWrappers-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
 
 echo -e "\nBuilding Carthage project..."
 . "./Carthage Project/Scripts/Carthage/utils.sh"
 applyXcode12Workaround
 set -o pipefail && xcodebuild -project "Carthage Project/APPropertyWrappers.xcodeproj" -sdk iphonesimulator -target "Example" | xcpretty
-
-# https://docs.travis-ci.com/user/environment-variables/#default-Environment-Variables
-if [ "${CONTINUOUS_INTEGRATION}" = "true" ]; then
-    echo -e "\nBuilding with Carthage for iOS only on CI..."
-    carthage build --no-skip-current --platform iOS --cache-builds
-else
-    echo -e "\nBuilding with Carthage..."
-    carthage build --no-skip-current --cache-builds
-fi
 
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
