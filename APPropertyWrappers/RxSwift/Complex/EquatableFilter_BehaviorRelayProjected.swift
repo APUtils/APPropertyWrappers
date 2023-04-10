@@ -40,6 +40,13 @@ open class EquatableFilter_BehaviorRelayProjected<V: Equatable> {
         setup()
     }
     
+    public init(projectedValue: BehaviorRelay<V>, compare: EquatableFilter<V>.Compare? = nil) {
+        _storage = BehaviorRelayProjected(projectedValue: projectedValue)
+        _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
+        
+        setup()
+    }
+    
     fileprivate func setup() {
         _filter
             // Since filter emits the current value immediately we need to skip the first one
