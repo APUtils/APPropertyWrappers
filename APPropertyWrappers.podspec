@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APPropertyWrappers'
-  s.version          = '3.1.1'
+  s.version          = '3.1.2'
   s.summary          = 'Simple and complex property wrappers for native Swift and for RxSwift.'
 
 # This description is used to generate tags and improve search results.
@@ -28,8 +28,11 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
   s.source           = { :git => 'https://github.com/APUtils/APPropertyWrappers.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-  s.swift_versions = ['5.1']
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.13'
+  s.tvos.deployment_target = '11.0'
+  s.watchos.deployment_target = '4.0'
+  s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
 
   s.frameworks = 'Foundation', 'UIKit'
   

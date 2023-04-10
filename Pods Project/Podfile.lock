@@ -1,10 +1,10 @@
 PODS:
   - APExtensions/Occupiable (12.0.1)
   - APExtensions/OptionalType (12.0.1)
-  - APPropertyWrappers/Core (3.1.0):
+  - APPropertyWrappers/Core (3.1.2):
     - APExtensions/OptionalType
     - RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (3.1.0):
+  - APPropertyWrappers/RxSwift (3.1.2):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
@@ -70,7 +70,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   APExtensions: a83d157a1bf42e97261f8139b39d97f9d2fe074a
-  APPropertyWrappers: ef70d66ab27ef2963884269c3fd457d2c6b4d21f
+  APPropertyWrappers: c4c29f39bf47ea79d97cc29a334f505293783c9d
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
