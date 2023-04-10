@@ -38,6 +38,7 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
   s.subspec 'Core' do |subspec|
     subspec.source_files = 'APPropertyWrappers/Core/**/*'
     subspec.dependency 'RoutableLogger', '>= 9.1.5'
+    subspec.dependency 'APExtensions/OptionalType'
   end
 
   s.subspec 'RxSwift' do |subspec|
