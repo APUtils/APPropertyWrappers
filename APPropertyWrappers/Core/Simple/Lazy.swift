@@ -48,6 +48,10 @@ open class Lazy<V> {
         }
     }
     
+    open var initialized: Bool {
+        storedValue != nil
+    }
+    
     public init(projectedValue: @escaping () -> V) {
         self.projectedValue = projectedValue
     }

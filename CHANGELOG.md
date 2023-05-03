@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.1.4](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.4)
+Released on 2023-05-03.
+
+#### Added
+- [Lazy] `initialized`
+
+
 ## [3.1.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.0)
 Released on 2023-04-10.
 

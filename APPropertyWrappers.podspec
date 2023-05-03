@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APPropertyWrappers'
-  s.version          = '3.1.3'
+  s.version          = '3.1.4'
   s.summary          = 'Simple and complex property wrappers for native Swift and for RxSwift.'
 
 # This description is used to generate tags and improve search results.
