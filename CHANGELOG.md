@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.1.5](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.5)
+Released on 2023-05-25.
+
+#### Removed
+- `EquatableFilter_BehaviorRelayProjected`, please use `EquatableFilter_ObservableObserverProjected` instead
+
+
 ## [3.1.4](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.4)
 Released on 2023-05-03.
 

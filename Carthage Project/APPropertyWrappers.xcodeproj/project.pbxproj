@@ -18,7 +18,6 @@
 		0DBFAB15291C9AA2005E444B /* FilePreserved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFAB14291C9AA2005E444B /* FilePreserved.swift */; };
 		0DE1142D2605F85600D75ADA /* BehaviorRelayProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */; };
 		0DE114302605FC2800D75ADA /* ObservableProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */; };
-		0DE1143A2605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */; };
 		0DE1143C2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114352605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift */; };
 		0DE1143D2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */; };
 		0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */; };
@@ -110,7 +109,6 @@
 		0DBFAB14291C9AA2005E444B /* FilePreserved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePreserved.swift; sourceTree = "<group>"; };
 		0DE1142C2605F85600D75ADA /* BehaviorRelayProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorRelayProjected.swift; sourceTree = "<group>"; };
 		0DE1142F2605FC2800D75ADA /* ObservableProjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProjected.swift; sourceTree = "<group>"; };
-		0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_BehaviorRelayProjected.swift; sourceTree = "<group>"; };
 		0DE114352605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableObserverProjected.swift; sourceTree = "<group>"; };
 		0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift; sourceTree = "<group>"; };
 		0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableProjected.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 		0DE114312605FC3800D75ADA /* Complex */ = {
 			isa = PBXGroup;
 			children = (
-				0DE114332605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift */,
 				0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */,
 				0DE114352605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift */,
 				0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */,
@@ -563,7 +560,6 @@
 				0DE1143D2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift in Sources */,
 				0DE114302605FC2800D75ADA /* ObservableProjected.swift in Sources */,
 				0D54D7ED261C110300F6814C /* BoolPreserved.swift in Sources */,
-				0DE1143A2605FC4800D75ADA /* EquatableFilter_BehaviorRelayProjected.swift in Sources */,
 				0D89233D23B8F7B8004F625D /* UserDefaultCodable.swift in Sources */,
 				0DE1144D26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift in Sources */,
 				0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */,
