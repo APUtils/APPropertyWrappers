@@ -9,6 +9,7 @@
 import Foundation
 import RxRelay
 import RxSwift
+import RxUtils
 
 /// Property that projects value as `ObservableObserver`. This one doesn't trigger events for updates with equal objects.
 /// Allowed internal access level: get + set.

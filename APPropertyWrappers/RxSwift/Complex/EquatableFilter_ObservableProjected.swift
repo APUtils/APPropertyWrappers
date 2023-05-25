@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxUtils
 
 /// Property that projects value as `Observable`. This one doesn't trigger events for updates with equal objects.
 /// Allowed internal access level: get.

@@ -14,6 +14,7 @@ import Foundation
 import RxCocoa
 import RxRelay
 import RxSwift
+import RxUtils
 
 /// Property that projects value as `ObservableObserver` and also saves value to the `UserDefaults`.
 /// Allowed internal access level: get + set.

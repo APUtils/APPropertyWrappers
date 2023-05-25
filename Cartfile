@@ -1,3 +1,4 @@
 github "APUtils/LogsManager" "9.1.19"
-github "ReactiveX/RxSwift"
+github "APUtils/RxUtils"
 github "CocoaLumberjack/CocoaLumberjack" "3.7.4"
+github "ReactiveX/RxSwift"

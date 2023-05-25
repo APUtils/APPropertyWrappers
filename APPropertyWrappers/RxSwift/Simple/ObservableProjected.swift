@@ -9,6 +9,7 @@
 import Foundation
 import RxRelay
 import RxSwift
+import RxUtils
 
 /// Property that projects value as `Observable`.
 /// Allowed internal access level: get.

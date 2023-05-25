@@ -13,6 +13,8 @@
 		0D5A7DAB23B4FB0700E0687B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A7DA723B4FB0700E0687B /* UserDefault.swift */; };
 		0D5A7DAE23B4FBBA00E0687B /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; };
 		0D5A7DB323B4FC0300E0687B /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D5E60772A1F659500B04872 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5E60762A1F659500B04872 /* RxSwiftExt.framework */; };
+		0D5E60792A1F687800B04872 /* RxUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5E60782A1F687800B04872 /* RxUtils.framework */; };
 		0D89233D23B8F7B8004F625D /* UserDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */; };
 		0DBFAB13291C9A92005E444B /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFAB12291C9A92005E444B /* Atomic.swift */; };
 		0DBFAB15291C9AA2005E444B /* FilePreserved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFAB14291C9AA2005E444B /* FilePreserved.swift */; };
@@ -22,7 +24,6 @@
 		0DE1143D2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */; };
 		0DE1143E2605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */; };
 		0DE114412605FCA100D75ADA /* EquatableFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114402605FCA100D75ADA /* EquatableFilter.swift */; };
-		0DE114462605FD1800D75ADA /* ObservableObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE114452605FD1800D75ADA /* ObservableObserver.swift */; };
 		0DE1144A26060A4800D75ADA /* UserDefaultCodable+ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1144926060A4800D75ADA /* UserDefaultCodable+ObserverType.swift */; };
 		0DE1144D26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1144C26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift */; };
 		0DE1146A2606162500D75ADA /* APExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE114632606161500D75ADA /* APExtensions.framework */; };
@@ -104,6 +105,8 @@
 		0D54D855261C1C3D00F6814C /* BoolPreserved_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolPreserved_Spec.swift; sourceTree = "<group>"; };
 		0D5A7DA623B4FB0700E0687B /* LateInitialized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateInitialized.swift; sourceTree = "<group>"; };
 		0D5A7DA723B4FB0700E0687B /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		0D5E60762A1F659500B04872 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = ../Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		0D5E60782A1F687800B04872 /* RxUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxUtils.framework; path = ../Carthage/Build/iOS/RxUtils.framework; sourceTree = "<group>"; };
 		0D89233C23B8F7B7004F625D /* UserDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultCodable.swift; sourceTree = "<group>"; };
 		0DBFAB12291C9A92005E444B /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		0DBFAB14291C9AA2005E444B /* FilePreserved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePreserved.swift; sourceTree = "<group>"; };
@@ -113,7 +116,6 @@
 		0DE114362605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableObserverProjected_UserDefaultsCodable.swift; sourceTree = "<group>"; };
 		0DE114372605FC4800D75ADA /* EquatableFilter_ObservableProjected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter_ObservableProjected.swift; sourceTree = "<group>"; };
 		0DE114402605FCA100D75ADA /* EquatableFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableFilter.swift; sourceTree = "<group>"; };
-		0DE114452605FD1800D75ADA /* ObservableObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableObserver.swift; sourceTree = "<group>"; };
 		0DE1144926060A4800D75ADA /* UserDefaultCodable+ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultCodable+ObserverType.swift"; sourceTree = "<group>"; };
 		0DE1144C26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+ObserverType.swift"; sourceTree = "<group>"; };
 		0DE114622606161500D75ADA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -165,9 +167,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D5E60792A1F687800B04872 /* RxUtils.framework in Frameworks */,
 				0DE1515E260651CB0067545C /* RoutableLogger.framework in Frameworks */,
 				0DE114702606162900D75ADA /* RxSwift.framework in Frameworks */,
 				E275E08322A03A8900E9900C /* APPropertyWrappers.framework in Frameworks */,
+				0D5E60772A1F659500B04872 /* RxSwiftExt.framework in Frameworks */,
 				0DE1146C2606162700D75ADA /* RxCocoa.framework in Frameworks */,
 				0DE1146A2606162500D75ADA /* APExtensions.framework in Frameworks */,
 				0DE1146E2606162800D75ADA /* RxRelay.framework in Frameworks */,
@@ -243,7 +247,6 @@
 		0DE1144B26060C0700D75ADA /* ObservableObserver */ = {
 			isa = PBXGroup;
 			children = (
-				0DE114452605FD1800D75ADA /* ObservableObserver.swift */,
 				0DE1144C26060C1D00D75ADA /* BehaviorRelay+ObserverType.swift */,
 			);
 			path = ObservableObserver;
@@ -357,6 +360,8 @@
 				0DE114622606161500D75ADA /* RxCocoa.framework */,
 				0DE114642606161500D75ADA /* RxRelay.framework */,
 				0DE114652606161500D75ADA /* RxSwift.framework */,
+				0D5E60762A1F659500B04872 /* RxSwiftExt.framework */,
+				0D5E60782A1F687800B04872 /* RxUtils.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -551,7 +556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE1144A26060A4800D75ADA /* UserDefaultCodable+ObserverType.swift in Sources */,
-				0DE114462605FD1800D75ADA /* ObservableObserver.swift in Sources */,
 				0D5A7DAA23B4FB0700E0687B /* LateInitialized.swift in Sources */,
 				0DE1143C2605FC4800D75ADA /* EquatableFilter_ObservableObserverProjected.swift in Sources */,
 				0DBFAB13291C9A92005E444B /* Atomic.swift in Sources */,

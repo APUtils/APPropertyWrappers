@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxUtils
 
 /// Property wrapper that prevent value set if it's equal to an existing one.
 /// - Tag: EquatableFilter
