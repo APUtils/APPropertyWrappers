@@ -22,6 +22,7 @@ open class Lazy<V> {
     
     open var projectedValue: () -> V {
         didSet {
+            lock.lock(); defer { lock.unlock() }
             storedValue = nil
         }
     }
@@ -49,7 +50,8 @@ open class Lazy<V> {
     }
     
     open var initialized: Bool {
-        storedValue != nil
+        lock.lock(); defer { lock.unlock() }
+        return storedValue != nil
     }
     
     public init(projectedValue: @escaping () -> V) {
@@ -58,6 +60,12 @@ open class Lazy<V> {
     
     public init(projectedValue: @autoclosure @escaping () -> V) {
         self.projectedValue = projectedValue
+    }
+    
+    /// Resets preserved value so it can be recomputed
+    public func reset() {
+        lock.lock(); defer { lock.unlock() }
+        storedValue = nil
     }
 }
 
