@@ -52,6 +52,7 @@
 		BB9BE11BF6283F1F4EA61575 /* Pods_APPropertyWrappers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4182D4C2E4C93EA1DD53BAF /* Pods-APPropertyWrappers_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Example.release.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Example/Pods-APPropertyWrappers_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2327DE92A5D494E00A659CE /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 		EE6E7919956458C52CF8E2AC /* Pods-APPropertyWrappers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +81,8 @@
 			children = (
 				0D3CD35527461221000AFFB6 /* _Specs */,
 			);
-			path = APPropertyWrappers_Tests;
+			name = APPropertyWrappers_Tests;
+			path = "../Carthage Project/Tests";
 			sourceTree = "<group>";
 		};
 		0D3CD35527461221000AFFB6 /* _Specs */ = {
@@ -156,6 +158,7 @@
 				0D5EB91429E4107C008AE583 /* checkBuild.command */,
 				0D5EB91229E4107C008AE583 /* DEPLOY PROCESS.md */,
 				0D5EB91729E415A8008AE583 /* Package.swift */,
+				E2327DE92A5D494E00A659CE /* packageUpdate.command */,
 				0DE1517D26065FBB0067545C /* podPush.command */,
 				0D5EB91829E4187E008AE583 /* README.md */,
 			);

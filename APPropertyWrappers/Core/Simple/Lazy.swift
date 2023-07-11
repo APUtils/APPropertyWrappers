@@ -84,3 +84,19 @@ extension Lazy where V: OptionalType {
         self.init(projectedValue: { projectedValue?() as! V })
     }
 }
+
+// ******************************* MARK: - CustomStringConvertible
+
+extension Lazy: CustomStringConvertible where V: CustomStringConvertible {
+    public var description: String {
+        wrappedValue.description
+    }
+}
+
+// ******************************* MARK: - CustomDebugStringConvertible
+
+extension Lazy: CustomDebugStringConvertible where V: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        wrappedValue.debugDescription
+    }
+}
