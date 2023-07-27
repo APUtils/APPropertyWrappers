@@ -68,11 +68,27 @@ public final class UserDefaultCodable<V: Codable> {
         }
     }
     
-    public convenience init(suitName: String? = nil, useStorage: Bool = true, key: String, defaultValue: V) {
-        self.init(suitName: suitName, useStorage: useStorage, key: key, defferedDefaultValue: defaultValue)
+    public convenience init(suitName: String? = nil,
+                            useStorage: Bool = true,
+                            key: String,
+                            defaultValue: V,
+                            file: String = #file,
+                            function: String = #function,
+                            line: UInt = #line) {
+        
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defferedDefaultValue: defaultValue, file: file, function: function, line: line)
     }
     
-    public init(suitName: String? = nil, useStorage: Bool = true, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
+    public init(suitName: String? = nil,
+                useStorage: Bool = true,
+                key: String,
+                defferedDefaultValue: @escaping @autoclosure () -> V,
+                file: String = #file,
+                function: String = #function,
+                line: UInt = #line) {
+        
+        GlobalFunctions.reportUserDefaultsDotKeyIfNeeded(key: key, file: file, function: function, line: line)
+        
         let userDefaults: UserDefaults
         if let suitName = suitName {
             if let _userDefaults = UserDefaults(suiteName: suitName) {

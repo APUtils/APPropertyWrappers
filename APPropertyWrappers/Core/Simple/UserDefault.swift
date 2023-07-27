@@ -45,11 +45,25 @@ open class UserDefault<V> {
         _storage.projectedValue = _defferedDefaultValue.projectedValue
     }
     
-    public convenience init(suitName: String? = nil, key: String, defaultValue: V) {
-        self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue)
+    public convenience init(suitName: String? = nil,
+                            key: String,
+                            defaultValue: V,
+                            file: String = #file,
+                            function: String = #function,
+                            line: UInt = #line) {
+        
+        self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue, file: file, function: function, line: line)
     }
     
-    public init(suitName: String? = nil, key: String, defferedDefaultValue: @escaping @autoclosure () -> V) {
+    public init(suitName: String? = nil,
+                key: String,
+                defferedDefaultValue: @escaping @autoclosure () -> V,
+                file: String = #file,
+                function: String = #function,
+                line: UInt = #line) {
+        
+        GlobalFunctions.reportUserDefaultsDotKeyIfNeeded(key: key, file: file, function: function, line: line)
+        
         let userDefaults: UserDefaults
         if let suitName = suitName {
             if let _userDefaults = UserDefaults(suiteName: suitName) {
