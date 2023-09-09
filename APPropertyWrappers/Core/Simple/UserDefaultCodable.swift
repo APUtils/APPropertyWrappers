@@ -130,20 +130,38 @@ public final class UserDefaultCodable<V: Codable> {
 // ******************************* MARK: - Convenience Inits
 
 public extension UserDefaultCodable where V: ExpressibleByNilLiteral {
-    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
-        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: nil)
+    convenience init(suitName: String? = nil,
+                     useStorage: Bool = true,
+                     key: String,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: nil, file: file, function: function, line: line)
     }
 }
 
 public extension UserDefaultCodable where V: ExpressibleByArrayLiteral {
-    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
-        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [])
+    convenience init(suitName: String? = nil,
+                     useStorage: Bool = true,
+                     key: String,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [], file: file, function: function, line: line)
     }
 }
 
 public extension UserDefaultCodable where V: ExpressibleByDictionaryLiteral {
-    convenience init(suitName: String? = nil, useStorage: Bool = true, key: String) {
-        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [:])
+    convenience init(suitName: String? = nil,
+                     useStorage: Bool = true,
+                     key: String,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(suitName: suitName, useStorage: useStorage, key: key, defaultValue: [:], file: file, function: function, line: line)
     }
 }
 

@@ -46,8 +46,13 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
         }
     }
     
-    public init(key: String, defaultValue: V, compare: EquatableFilter<V>.Compare? = nil) {
-        _userDefault = UserDefaultCodable(key: key, defaultValue: defaultValue)
+    public init(key: String, defaultValue: V,
+                compare: EquatableFilter<V>.Compare? = nil,
+                file: String = #file,
+                function: String = #function,
+                line: UInt = #line) {
+        
+        _userDefault = UserDefaultCodable(key: key, defaultValue: defaultValue, file: file, function: function, line: line)
         storage = _userDefault.wrappedValue
         _filter = EquatableFilter(wrappedValue: _storage.wrappedValue, compare: compare)
         
@@ -72,19 +77,34 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
 // ******************************* MARK: - Convenience Inits
 
 extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByNilLiteral {
-    convenience init(key: String, compare: EquatableFilter<V>.Compare? = nil) {
-        self.init(key: key, defaultValue: nil, compare: compare)
+    convenience init(key: String,
+                     compare: EquatableFilter<V>.Compare? = nil,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(key: key, defaultValue: nil, compare: compare, file: file, function: function, line: line)
     }
 }
 
 extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByArrayLiteral {
-    convenience init(key: String, compare: EquatableFilter<V>.Compare? = nil) {
-        self.init(key: key, defaultValue: [], compare: compare)
+    convenience init(key: String,
+                     compare: EquatableFilter<V>.Compare? = nil,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(key: key, defaultValue: [], compare: compare, file: file, function: function, line: line)
     }
 }
 
 extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByDictionaryLiteral {
-    convenience init(key: String, compare: EquatableFilter<V>.Compare? = nil) {
-        self.init(key: key, defaultValue: [:], compare: compare)
+    convenience init(key: String,
+                     compare: EquatableFilter<V>.Compare? = nil,
+                     file: String = #file,
+                     function: String = #function,
+                     line: UInt = #line) {
+        
+        self.init(key: key, defaultValue: [:], compare: compare, file: file, function: function, line: line)
     }
 }
