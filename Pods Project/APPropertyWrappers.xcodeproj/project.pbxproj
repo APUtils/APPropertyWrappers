@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		83BF44CE5679B70580C53A97 /* Pods_APPropertyWrappers_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE11BF6283F1F4EA61575 /* Pods_APPropertyWrappers_Example.framework */; };
+		E21379B92B2B758000FC5874 /* UserDefault_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */; };
 		F50CA6444455092E0DB4E6D1 /* Pods_APPropertyWrappers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		BB9BE11BF6283F1F4EA61575 /* Pods_APPropertyWrappers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4182D4C2E4C93EA1DD53BAF /* Pods-APPropertyWrappers_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Example.release.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Example/Pods-APPropertyWrappers_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault_Spec.swift; sourceTree = "<group>"; };
 		E2327DE92A5D494E00A659CE /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 		EE6E7919956458C52CF8E2AC /* Pods-APPropertyWrappers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 			children = (
 				0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */,
 				0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */,
+				E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */,
 			);
 			name = _Specs;
 			path = "../../Carthage Project/Tests/_Specs";
@@ -241,7 +244,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0D3CD34B274611F0000AFFB6 = {
@@ -402,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21379B92B2B758000FC5874 /* UserDefault_Spec.swift in Sources */,
 				0D3CD35727461221000AFFB6 /* BoolPreserved_Spec.swift in Sources */,
 				0DF75932283D5318000E93EF /* FilePreserved_Spec.swift in Sources */,
 			);
@@ -561,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -612,7 +616,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

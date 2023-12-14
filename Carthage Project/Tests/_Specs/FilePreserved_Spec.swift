@@ -11,8 +11,8 @@ import Nimble_Snapshots
 import Quick
 @testable import APPropertyWrappers
 
-class FilePreserved_Spec: QuickSpec {
-    override func spec() {
+final class FilePreserved_Spec: QuickSpec {
+    override static func spec() {
         describe("FilePreserved") {
             var preserved: FilePreserved!
             

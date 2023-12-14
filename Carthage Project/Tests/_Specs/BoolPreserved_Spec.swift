@@ -11,8 +11,8 @@ import Nimble_Snapshots
 import Quick
 @testable import APPropertyWrappers
 
-class BoolPreserved_Spec: QuickSpec {
-    override func spec() {
+final class BoolPreserved_Spec: QuickSpec {
+    override static func spec() {
         describe("BoolPreserved") {
             var preserved: BoolPreserved!
             
