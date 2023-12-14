@@ -16,12 +16,14 @@ final class UserDefault_Spec: QuickSpec {
         describe("UserDefault") {
             context("when has optional value type and non-optional default value") {
                 it("should work properly") {
-                    let ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: 1)
+                    var ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: 1)
                     ud.reset()
                     
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: 1)
                     expect(ud.wrappedValue) == 1
                     
                     ud.wrappedValue = nil
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: 1)
                     expect(ud.wrappedValue) == nil
                     
                     ud.reset()
@@ -30,6 +32,9 @@ final class UserDefault_Spec: QuickSpec {
                     ud.wrappedValue = nil
                     ud.removeFromUserDefaults()
                     expect(ud.wrappedValue) == nil
+                    
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: 1)
+                    expect(ud.wrappedValue) == 1
                     
                     ud.wrappedValue = 2
                     expect(ud.wrappedValue) == 2
@@ -41,9 +46,10 @@ final class UserDefault_Spec: QuickSpec {
             
             context("when has optional value type and non-optional default value") {
                 it("should work properly") {
-                    let ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: nil)
+                    var ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: nil)
                     ud.reset()
                     
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: nil)
                     expect(ud.wrappedValue) == nil
                     
                     ud.wrappedValue = 1
@@ -56,7 +62,11 @@ final class UserDefault_Spec: QuickSpec {
                     ud.removeFromUserDefaults()
                     expect(ud.wrappedValue) == 2
                     
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: nil)
+                    expect(ud.wrappedValue) == nil
+                    
                     ud.wrappedValue = nil
+                    ud = UserDefault<Int?>(key: "UserDefault_Spec", defaultValue: nil)
                     expect(ud.wrappedValue) == nil
                     
                     ud.reset()

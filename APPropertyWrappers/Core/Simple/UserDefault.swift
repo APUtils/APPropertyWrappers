@@ -55,44 +55,6 @@ open class UserDefault<V> {
         self.init(suitName: suitName, key: key, defferedDefaultValue: defaultValue, file: file, function: function, line: line)
     }
     
-    public init<T>(suitName: String? = nil,
-                   key: String,
-                   defferedDefaultValue: @escaping @autoclosure () -> T?,
-                   file: String = #file,
-                   function: String = #function,
-                   line: UInt = #line) where V == T? {
-        
-        GlobalFunctions.reportUserDefaultsDotKeyIfNeeded(key: key, file: file, function: function, line: line)
-        
-        let userDefaults: UserDefaults
-        if let suitName = suitName {
-            if let _userDefaults = UserDefaults(suiteName: suitName) {
-                userDefaults = _userDefaults
-            } else {
-                RoutableLogger.logError("Unable to initialize user defaults", data: ["suitName": suitName])
-                userDefaults = .standard
-            }
-        } else {
-            userDefaults = .standard
-        }
-        self.userDefaults = userDefaults
-        
-        self.key = key
-        self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
-        
-        self._storage = Lazy(projectedValue: { () -> T? in
-            if let object = userDefaults.object(forKey: key) {
-                if let value = object as? T {
-                    return value
-                } else if let data = object as? Data, data.isEmpty {
-                    return nil
-                }
-            }
-            
-            return defferedDefaultValue()
-        }())
-    }
-    
     public init(suitName: String? = nil,
                 key: String,
                 defferedDefaultValue: @escaping @autoclosure () -> V,
@@ -118,9 +80,16 @@ open class UserDefault<V> {
         self.key = key
         self._defferedDefaultValue = Lazy(projectedValue: defferedDefaultValue())
         
-        
         self._storage = Lazy(projectedValue: { () -> V in
-            userDefaults.object(forKey: key) as? V ?? defferedDefaultValue()
+            if let object = userDefaults.object(forKey: key) {
+                if let value = object as? V {
+                    return value
+                } else if let data = object as? Data, data.isEmpty, let value = Optional<Any>.none as? V {
+                    return value
+                }
+            }
+            
+            return defferedDefaultValue()
         }())
     }
 }
