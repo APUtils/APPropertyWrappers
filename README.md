@@ -1,6 +1,5 @@
 # APPropertyWrappers
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Version](https://img.shields.io/cocoapods/v/APPropertyWrappers.svg?style=flat)](http://cocoapods.org/pods/APPropertyWrappers)
 [![License](https://img.shields.io/cocoapods/l/APPropertyWrappers.svg?style=flat)](http://cocoapods.org/pods/APPropertyWrappers)
@@ -11,7 +10,7 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`.
 
 ## Example
 
-Clone the repo and then open `Carthage Project/APPropertyWrappers.xcodeproj`
+Clone the repo and then open `Pods Project/APPropertyWrappers.xcworkspace`
 
 ## Installation
 
@@ -21,18 +20,6 @@ Clone the repo and then open `Carthage Project/APPropertyWrappers.xcodeproj`
 - Copy and paste the following into the search: `https://github.com/APUtils/APPropertyWrappers`
 - Tap `Add Package`
 - Select `APPropertyWrappers` or `APPropertyWrappersRxSwift` and tap `Add Package`
-
-#### Carthage
-
-Please check [official guide](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
-
-Cartfile:
-
-```
-github "APUtils/APPropertyWrappers" ~> 3.1
-```
-
-You should later add both `APPropertyWrappers` and `RoutableLogger` frameworks to your project.
 
 #### CocoaPods
 

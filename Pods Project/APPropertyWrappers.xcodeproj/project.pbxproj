@@ -35,7 +35,6 @@
 		0D5EB91229E4107C008AE583 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		0D5EB91329E4107C008AE583 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		0D5EB91429E4107C008AE583 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
-		0D5EB91529E4108A008AE583 /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = "../Carthage Project/Scripts/Carthage/carthageUpdate.command"; sourceTree = "<group>"; };
 		0D5EB91729E415A8008AE583 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0D5EB91829E4187E008AE583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0DE114522606111000D75ADA /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -83,8 +82,7 @@
 			children = (
 				0D3CD35527461221000AFFB6 /* _Specs */,
 			);
-			name = APPropertyWrappers_Tests;
-			path = "../Carthage Project/Tests";
+			path = APPropertyWrappers_Tests;
 			sourceTree = "<group>";
 		};
 		0D3CD35527461221000AFFB6 /* _Specs */ = {
@@ -94,8 +92,7 @@
 				0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */,
 				E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */,
 			);
-			name = _Specs;
-			path = "../../Carthage Project/Tests/_Specs";
+			path = _Specs;
 			sourceTree = "<group>";
 		};
 		218159151261308B7E578E55 /* Frameworks */ = {
@@ -156,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				0DE114522606111000D75ADA /* APPropertyWrappers.podspec */,
-				0D5EB91529E4108A008AE583 /* carthageUpdate.command */,
 				0D5EB91329E4107C008AE583 /* CHANGELOG.md */,
 				0D5EB91429E4107C008AE583 /* checkBuild.command */,
 				0D5EB91229E4107C008AE583 /* DEPLOY PROCESS.md */,

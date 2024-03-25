@@ -7,16 +7,8 @@ cd "$base_dir"
 
 echo ""
 
-echo -e "\nBuilding Swift Package for iOS..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios16.4-simulator"
-
 echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Pods Project/APPropertyWrappers.xcworkspace" -scheme "APPropertyWrappers-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
-
-echo -e "\nBuilding Carthage project..."
-. "./Carthage Project/Scripts/Carthage/utils.sh"
-applyXcode12Workaround
-set -o pipefail && xcodebuild -project "Carthage Project/APPropertyWrappers.xcodeproj" -sdk iphonesimulator -target "Example" | xcpretty
 
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"

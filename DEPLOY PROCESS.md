@@ -1,7 +1,5 @@
-- Assure `Carthage Project/APPropertyWrappers.xcodeproj` have all dependencies added
 - Change version in podspec
 - Run `podUpdate.command`
-- Run `carthageUpdate.command`
 - Run `packageUpdate.command`
 - Run `checkBuild.command`
 - Update CHANGELOG.md
