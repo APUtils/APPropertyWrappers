@@ -37,12 +37,14 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
 
   s.subspec 'Core' do |subspec|
     subspec.source_files = 'APPropertyWrappers/Core/**/*'
+    subspec.resource_bundle = {"APPropertyWrappers.Core.privacy"=>"Pod/Privacy/APPropertyWrappers.Core/PrivacyInfo.xcprivacy"}
     subspec.dependency 'RoutableLogger', '>= 9.1.5'
     subspec.dependency 'APExtensions/OptionalType'
   end
 
   s.subspec 'RxSwift' do |subspec|
     subspec.source_files = 'APPropertyWrappers/RxSwift/**/*'
+    subspec.resource_bundle = {"APPropertyWrappers.RxSwift.privacy"=>"Pod/Privacy/APPropertyWrappers.RxSwift/PrivacyInfo.xcprivacy"}
     subspec.dependency 'APPropertyWrappers/Core'
     subspec.dependency 'RxCocoa'
     subspec.dependency 'RxSwift'
