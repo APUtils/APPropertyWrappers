@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.2.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.2.0)
+Released on 2024-03-25.
+
+#### Added
+- [Lazy] Conformance to `CustomStringConvertible` and `CustomDebugStringConvertible`
+- [Lazy] `reset()`
+- [UserDefault] and [UserDefaultCodable] log warning for '.' in key
+- `PrivacyInfo.xcprivacy` resource
+
+#### Changed
+- iOS 13 deployment target for example project
+- [UserDefault] Behavior change for optional type. Preserve `nil` values instead of removing existing from user defaults
+
+#### Fixed
+- [UserDefault] Optional with non-optional default value support fix
+
+#### Improved
+- [Lazy] Better multithreading
+
+
 ## [3.1.6](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.1.6)
 Released on 2023-05-25.
 
