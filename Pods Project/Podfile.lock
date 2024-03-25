@@ -1,26 +1,36 @@
 PODS:
-  - APExtensions/Occupiable (14.1.1)
-  - APExtensions/OptionalType (14.1.1)
-  - APPropertyWrappers/Core (3.1.6):
+  - APExtensions/Occupiable (14.2.0)
+  - APExtensions/OptionalType (14.2.0)
+  - APPropertyWrappers/Core (3.2.0):
     - APExtensions/OptionalType
     - RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (3.1.6):
+  - APPropertyWrappers/RxSwift (3.2.0):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
     - RxUtils
+  - CwlCatchException (2.2.0):
+    - CwlCatchExceptionSupport (~> 2.2.0)
+  - CwlCatchExceptionSupport (2.2.0)
+  - CwlMachBadInstructionHandler (2.2.0)
+  - CwlPosixPreconditionTesting (2.2.0)
+  - CwlPreconditionTesting (2.2.1):
+    - CwlCatchException (~> 2.2.0)
+    - CwlMachBadInstructionHandler (~> 2.2.0)
+    - CwlPosixPreconditionTesting (~> 2.2.0)
   - iOSSnapshotTestCase (8.0.0):
     - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
-  - Nimble (12.3.0)
-  - Nimble-Snapshots (9.6.1):
-    - Nimble-Snapshots/Core (= 9.6.1)
-  - Nimble-Snapshots/Core (9.6.1):
+  - Nimble (13.2.1):
+    - CwlPreconditionTesting (~> 2.2.0)
+  - Nimble-Snapshots (9.7.0):
+    - Nimble-Snapshots/Core (= 9.7.0)
+  - Nimble-Snapshots/Core (9.7.0):
     - iOSSnapshotTestCase (~> 8.0)
-    - Nimble (~> 12.0)
-  - Quick (7.3.0)
+    - Nimble (~> 13.0)
+  - Quick (7.5.0)
   - RoutableLogger (12.3.3)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
@@ -53,6 +63,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - APExtensions
+    - CwlCatchException
+    - CwlCatchExceptionSupport
+    - CwlMachBadInstructionHandler
+    - CwlPosixPreconditionTesting
+    - CwlPreconditionTesting
     - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
@@ -69,12 +84,17 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
-  APPropertyWrappers: 697957ae92f968e9cf99d1f18126e3cdef0bd605
+  APExtensions: c91c6e186ace20b0955607aed7dfae912e8c840f
+  APPropertyWrappers: 9869348585ee057948b75a569ad6a2906807d638
+  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
+  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
+  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
+  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
+  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
-  Nimble: f8a8219d16f176429b951e8f7e72df5c23ceddc0
-  Nimble-Snapshots: 4988d1cf2fe062f13bd2eb87c4279770785e682b
-  Quick: d32871931c05547cb4e0bc9009d66a18b50d8558
+  Nimble: 9e81a67096dab1d1f5160d7a3f8fa7a1eeec38fd
+  Nimble-Snapshots: 7f2710c507469eb0fc4912f45d0f280e15f91966
+  Quick: 2b651168441479b949ba987f3cee41a9cc53aa32
   RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -84,4 +104,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0646d1b7b90aba8e43e6799a0e4fd0acff286ff0
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
