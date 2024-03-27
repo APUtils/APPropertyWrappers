@@ -29,7 +29,12 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
-  s.swift_versions = ['5.5', '5.5.1', '5.5.2', '5.6', '5.6.1', '5.7']
+  s.swift_versions = ['5']
+  
+  # 1.12.0: Ensure developers won't hit CocoaPods/CocoaPods#11402 with the resource
+  # bundle for the privacy manifest.
+  # 1.13.0: visionOS is recognized as a platform.
+  s.cocoapods_version = '>= 1.13.0'
 
   s.frameworks = 'Foundation', 'UIKit'
   
@@ -37,14 +42,14 @@ Simple and complex property wrappers for native `Swift` and for `RxSwift`. Pleas
 
   s.subspec 'Core' do |subspec|
     subspec.source_files = 'APPropertyWrappers/Core/**/*'
-    subspec.resource_bundle = {"APPropertyWrappers.Core.privacy"=>"Pod/Privacy/APPropertyWrappers.Core/PrivacyInfo.xcprivacy"}
+    subspec.resource_bundle = {"APPropertyWrappers.Core.privacy"=>"APPropertyWrappers/Privacy/APPropertyWrappers.Core/PrivacyInfo.xcprivacy"}
     subspec.dependency 'RoutableLogger', '>= 9.1.5'
     subspec.dependency 'APExtensions/OptionalType'
   end
 
   s.subspec 'RxSwift' do |subspec|
     subspec.source_files = 'APPropertyWrappers/RxSwift/**/*'
-    subspec.resource_bundle = {"APPropertyWrappers.RxSwift.privacy"=>"Pod/Privacy/APPropertyWrappers.RxSwift/PrivacyInfo.xcprivacy"}
+    subspec.resource_bundle = {"APPropertyWrappers.RxSwift.privacy"=>"APPropertyWrappers/Privacy/APPropertyWrappers.RxSwift/PrivacyInfo.xcprivacy"}
     subspec.dependency 'APPropertyWrappers/Core'
     subspec.dependency 'RxCocoa'
     subspec.dependency 'RxSwift'

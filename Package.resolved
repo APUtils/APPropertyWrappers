@@ -1,52 +1,60 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "APExtensions",
-        "repositoryURL": "https://github.com/APUtils/APExtensions.git",
-        "state": {
-          "branch": null,
-          "revision": "36f57c6992c481ca87a7cf63be23446a6f520d87",
-          "version": "12.0.3"
-        }
-      },
-      {
-        "package": "RoutableLogger",
-        "repositoryURL": "https://github.com/anton-plebanovich/RoutableLogger.git",
-        "state": {
-          "branch": null,
-          "revision": "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "RxSwift",
-        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
-        "state": {
-          "branch": null,
-          "revision": "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
-          "version": "6.6.0"
-        }
-      },
-      {
-        "package": "RxSwiftExt",
-        "repositoryURL": "https://github.com/RxSwiftCommunity/RxSwiftExt.git",
-        "state": {
-          "branch": null,
-          "revision": "eb4adf9f00a21b3efc3869a5218a6d7517e95222",
-          "version": "6.2.1"
-        }
-      },
-      {
-        "package": "RxUtils",
-        "repositoryURL": "https://github.com/APUtils/RxUtils.git",
-        "state": {
-          "branch": null,
-          "revision": "ccd07c0193b93c2ab9dd4faddfe32230ca09d3ad",
-          "version": "4.2.0"
-        }
+  "originHash" : "f02b23e6756e8d150445d43780a53f9dfd1f95481fb90ea82069dee2b1053a4e",
+  "pins" : [
+    {
+      "identity" : "apextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/APUtils/APExtensions.git",
+      "state" : {
+        "revision" : "7cead7483a09dcf0de15264361f809014166d995",
+        "version" : "14.2.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "routablelogger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anton-plebanovich/RoutableLogger.git",
+      "state" : {
+        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "rxgesture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxGesture.git",
+      "state" : {
+        "revision" : "1b137c576b4aaaab949235752278956697c9e4a0",
+        "version" : "4.0.4"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
+    },
+    {
+      "identity" : "rxswiftext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxSwiftExt.git",
+      "state" : {
+        "revision" : "eb4adf9f00a21b3efc3869a5218a6d7517e95222",
+        "version" : "6.2.1"
+      }
+    },
+    {
+      "identity" : "rxutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/APUtils/RxUtils.git",
+      "state" : {
+        "revision" : "8cf4ac1a97ff1ab281515ad2ee3d22245e2bb170",
+        "version" : "4.3.1"
+      }
+    }
+  ],
+  "version" : 3
 }

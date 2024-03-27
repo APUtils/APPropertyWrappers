@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "APPropertyWrappers",
     platforms: [
-        .iOS(.v11),
-        .macOS(.v10_13),
-        .tvOS(.v11),
-        .watchOS(.v4),
+        .iOS(.v12),
+//        .macOS(.v10_13),
+//        .tvOS(.v12),
+//        .watchOS(.v4),
     ],
     products: [
         .library(
@@ -23,7 +23,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "12.0.0")),
+        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "14.0.0")),
         .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "4.2.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
     ],
@@ -32,14 +32,18 @@ let package = Package(
             name: "RxAPPropertyWrappers",
             dependencies: [
                 "APPropertyWrappers",
-                "RoutableLogger",
-                "RxCocoa",
-                "RxRelay",
-                "RxSwift",
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxRelay", package: "RxSwift"),
+                .product(name: "RxSwift", package: "RxSwift"),
                 "RxUtils",
             ],
-            path: "APPropertyWrappers/RxSwift",
+            path: "APPropertyWrappers",
             exclude: [],
+            sources: ["RxSwift"],
+            resources: [
+                .process("Privacy/APPropertyWrappers.RxSwift/PrivacyInfo.xcprivacy")
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
@@ -47,11 +51,15 @@ let package = Package(
         .target(
             name: "APPropertyWrappers",
             dependencies: [
-                "RoutableLogger",
+                .product(name: "RoutableLogger", package: "RoutableLogger"),
                 .product(name: "APExtensionsOptionalType", package: "APExtensions"),
             ],
-            path: "APPropertyWrappers/Core",
+            path: "APPropertyWrappers",
             exclude: [],
+            sources: ["Core"],
+            resources: [
+                .process("Privacy/APPropertyWrappers.Core/PrivacyInfo.xcprivacy")
+            ],
             swiftSettings: [
                 .define("SPM"),
             ]
