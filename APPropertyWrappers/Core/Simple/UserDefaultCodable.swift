@@ -14,15 +14,6 @@ import RoutableLogger
 @propertyWrapper
 public final class UserDefaultCodable<V: Codable> {
     
-    // ******************************* MARK: - Box
-    
-    public struct Box: Codable {
-        public let value: V
-        public init(value: V) {
-            self.value = value
-        }
-    }
-    
     // ******************************* MARK: - Properties
     
     fileprivate let userDefaults: UserDefaults
@@ -239,23 +230,5 @@ private extension UserDefaults {
             
         default: return false
         }
-    }
-}
-
-private extension Encodable {
-    
-    /// Encodes the object into a property list.
-    func propertyListEncoded() throws -> Data {
-        let encoder = PropertyListEncoder()
-        return try encoder.encode(self)
-    }
-}
-
-private extension Decodable {
-    
-    /// Creates object from property list data.
-    static func create(propertyListData: Data) throws -> Self {
-        let decoder = PropertyListDecoder()
-        return try decoder.decode(Self.self, from: propertyListData)
     }
 }

@@ -16,6 +16,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		83BF44CE5679B70580C53A97 /* Pods_APPropertyWrappers_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9BE11BF6283F1F4EA61575 /* Pods_APPropertyWrappers_Example.framework */; };
 		E21379B92B2B758000FC5874 /* UserDefault_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */; };
+		E2D36EAF2C89AA7300439679 /* FilePreservedCodable_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D36EAE2C89AA7300439679 /* FilePreservedCodable_Spec.swift */; };
 		F50CA6444455092E0DB4E6D1 /* Pods_APPropertyWrappers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault_Spec.swift; sourceTree = "<group>"; };
 		E2327DE92A5D494E00A659CE /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
+		E2D36EAE2C89AA7300439679 /* FilePreservedCodable_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreservedCodable_Spec.swift; sourceTree = "<group>"; };
 		EE6E7919956458C52CF8E2AC /* Pods-APPropertyWrappers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 			children = (
 				0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */,
 				0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */,
+				E2D36EAE2C89AA7300439679 /* FilePreservedCodable_Spec.swift */,
 				E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */,
 			);
 			path = _Specs;
@@ -305,6 +308,7 @@
 				"${BUILT_PRODUCTS_DIR}/APPropertyWrappers/APPropertyWrappers.framework",
 				"${BUILT_PRODUCTS_DIR}/RoutableLogger/RoutableLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
@@ -316,6 +320,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APPropertyWrappers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RoutableLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
@@ -413,6 +418,7 @@
 			files = (
 				E21379B92B2B758000FC5874 /* UserDefault_Spec.swift in Sources */,
 				0D3CD35727461221000AFFB6 /* BoolPreserved_Spec.swift in Sources */,
+				E2D36EAF2C89AA7300439679 /* FilePreservedCodable_Spec.swift in Sources */,
 				0DF75932283D5318000E93EF /* FilePreserved_Spec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

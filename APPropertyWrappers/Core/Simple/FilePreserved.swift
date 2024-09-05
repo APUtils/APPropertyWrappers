@@ -15,7 +15,7 @@ open class FilePreserved {
     
     public typealias Transform = (String?) -> (String?)
     
-    private static let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    static let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     private let url: URL
     private let setTransform: Transform
     private let getTransform: Transform
