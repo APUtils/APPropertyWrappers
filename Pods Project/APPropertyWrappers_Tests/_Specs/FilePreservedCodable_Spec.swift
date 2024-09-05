@@ -16,6 +16,41 @@ final class FilePreservedCodable_Spec: QuickSpec {
         describe("FilePreservedCodable") {
             context("when have Date type") {
                 var preserved: FilePreservedCodable<Date>!
+                let date0 = Date(timeIntervalSince1970: 0)
+                
+                beforeEach {
+                    preserved = FilePreservedCodable(key: "spec", defaultValue: date0)
+                }
+                
+                afterEach {
+                    preserved?.reset()
+                    preserved = nil
+                }
+                
+                it("should work properly") {
+                    expect(preserved.wrappedValue) == date0
+                    
+                    let date1 = Date(timeIntervalSince1970: 1)
+                    preserved.wrappedValue = date1
+                    expect(preserved.wrappedValue) == date1
+                    
+                    preserved = FilePreservedCodable(key: "spec", defaultValue: date0)
+                    expect(preserved.wrappedValue) == date1
+                    
+                    let date2 = Date(timeIntervalSince1970: 2)
+                    preserved.wrappedValue = date2
+                    expect(preserved.wrappedValue) == date2
+                    
+                    preserved.reset()
+                    expect(preserved.wrappedValue) == date0
+                    
+                    preserved.wrappedValue = date2
+                    expect(preserved.wrappedValue) == date2
+                }
+            }
+            
+            context("when have Date? type") {
+                var preserved: FilePreservedCodable<Date?>!
                 
                 beforeEach {
                     preserved = FilePreservedCodable(key: "spec")
