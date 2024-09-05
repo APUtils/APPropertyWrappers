@@ -58,6 +58,8 @@ open class BoolPreserved {
     
     /// Resets value to its default.
     public func reset() {
+        guard FileManager.default.fileExists(atPath: path) else { return }
+        
         do {
             try FileManager.default.removeItem(atPath: path)
         } catch {
