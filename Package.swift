@@ -7,9 +7,9 @@ let package = Package(
     name: "APPropertyWrappers",
     platforms: [
         .iOS(.v12),
-//        .macOS(.v10_13),
-//        .tvOS(.v12),
-//        .watchOS(.v4),
+        .macOS(.v10_13),
+        .tvOS(.v12),
+        .watchOS(.v4),
     ],
     products: [
         .library(
