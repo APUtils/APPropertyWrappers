@@ -27,27 +27,20 @@ open class FilePreservedCodable<V: Codable & Equatable> {
             guard newValue != storage else { return }
             
             storage = newValue
-            let boxedValue = Box(value: newValue)
-            let data: Data
-            do {
-                data = try boxedValue.propertyListEncoded()
-            } catch {
-                RoutableLogger.logError("Unable to set new value. Data conversion failed.", data: ["url": url])
-                return
-            }
-            
-            do {
-                try data.write(to: url)
-            } catch {
-                RoutableLogger.logError("Unable to set new value. Data write failed.", error: error, data: ["url": url, "data": data])
-            }
+            Self.setValue(newValue, url: url)
         }
     }
     
-    public init(key: String, defaultValue: V) {
+    public init(key: String, defaultValue: V, preserveDefault: Bool = false) {
         self.url = FilePreserved.documentsURL.appendingPathComponent("FilePreservedCodable_\(key)")
         self.defaultValue = defaultValue
-        self.storage = Self.getValue(url: url) ?? defaultValue
+        
+        if let value = Self.getValue(url: url) {
+            self.storage = value
+        } else {
+            Self.setValue(defaultValue, url: url)
+            self.storage = defaultValue
+        }
     }
     
     /// Resets value to its default.
@@ -76,6 +69,23 @@ open class FilePreservedCodable<V: Codable & Equatable> {
         } catch {
             RoutableLogger.logError("Unable to decode preserved data. Preserved data was not restored.", data: ["url": url, "data": data])
             return nil
+        }
+    }
+    
+    static func setValue(_ value: V, url: URL) {
+        let boxedValue = Box(value: value)
+        let data: Data
+        do {
+            data = try boxedValue.propertyListEncoded()
+        } catch {
+            RoutableLogger.logError("Unable to set new value. Data conversion failed.", data: ["url": url])
+            return
+        }
+        
+        do {
+            try data.write(to: url)
+        } catch {
+            RoutableLogger.logError("Unable to set new value. Data write failed.", error: error, data: ["url": url, "data": data])
         }
     }
 }
