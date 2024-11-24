@@ -10,7 +10,7 @@ import Foundation
 import RxRelay
 import RxSwift
 
-extension BehaviorRelay: ObserverType {
+extension BehaviorRelay: @retroactive ObserverType {
     
     // swiftlint:disable:next excessive_public_other_modifier
     public func on(_ event: Event<Element>) {
