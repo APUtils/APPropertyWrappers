@@ -46,7 +46,8 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
         }
     }
     
-    public init(key: String, defaultValue: V,
+    public init(key: String,
+                defaultValue: V,
                 compare: EquatableFilter<V>.Compare? = nil,
                 file: String = #file,
                 function: String = #function,
