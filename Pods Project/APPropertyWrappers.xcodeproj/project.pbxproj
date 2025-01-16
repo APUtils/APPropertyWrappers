@@ -243,7 +243,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0D3CD34B274611F0000AFFB6 = {

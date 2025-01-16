@@ -11,21 +11,21 @@ PODS:
     - RxCocoa
     - RxSwift
     - RxUtils
-  - CwlCatchException (2.2.0):
-    - CwlCatchExceptionSupport (~> 2.2.0)
-  - CwlCatchExceptionSupport (2.2.0)
-  - CwlMachBadInstructionHandler (2.2.0)
-  - CwlPosixPreconditionTesting (2.2.0)
-  - CwlPreconditionTesting (2.2.1):
-    - CwlCatchException (~> 2.2.0)
-    - CwlMachBadInstructionHandler (~> 2.2.0)
-    - CwlPosixPreconditionTesting (~> 2.2.0)
+  - CwlCatchException (2.2.1):
+    - CwlCatchExceptionSupport (~> 2.2.1)
+  - CwlCatchExceptionSupport (2.2.1)
+  - CwlMachBadInstructionHandler (2.2.2)
+  - CwlPosixPreconditionTesting (2.2.2)
+  - CwlPreconditionTesting (2.2.2):
+    - CwlCatchException (~> 2.2.1)
+    - CwlMachBadInstructionHandler (~> 2.2.2)
+    - CwlPosixPreconditionTesting (~> 2.2.2)
   - iOSSnapshotTestCase (8.0.0):
     - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
-  - Nimble (13.4.0):
+  - Nimble (13.7.1):
     - CwlPreconditionTesting (~> 2.2.0)
   - Nimble-Snapshots (9.8.0):
     - Nimble-Snapshots/Core (= 9.8.0)
@@ -34,15 +34,15 @@ PODS:
     - Nimble (~> 13.0)
   - Quick (7.6.2)
   - RoutableLogger (12.4.0)
-  - RxCocoa (6.7.1):
-    - RxRelay (= 6.7.1)
-    - RxSwift (= 6.7.1)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - RxRelay (6.7.1):
-    - RxSwift (= 6.7.1)
-  - RxSwift (6.7.1)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
   - RxSwiftExt (6.2.1):
     - RxSwiftExt/Core (= 6.2.1)
     - RxSwiftExt/RxCocoa (= 6.2.1)
@@ -94,23 +94,23 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   APExtensions: c91c6e186ace20b0955607aed7dfae912e8c840f
   APPropertyWrappers: 623e42fbed25726534c488eca6a01ab08574d31d
-  CwlCatchException: 51bf8319009a31104ea6f0568730d1ecc25b6454
-  CwlCatchExceptionSupport: 1345d6adb01a505933f2bc972dab60dcb9ce3e50
-  CwlMachBadInstructionHandler: ea1030428925d9bf340882522af30712fb4bf356
-  CwlPosixPreconditionTesting: a125dee731883f2582715f548c6b6c92c7fde145
-  CwlPreconditionTesting: ccfd08aca58d14e04062b2a3dd2fd52e09857453
+  CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
+  CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
+  CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
+  CwlPosixPreconditionTesting: ecd095aa2129e740b44301c34571e8d85906fb88
+  CwlPreconditionTesting: 67a0047dd4de4382b93442c0e3f25207f984f35a
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
-  Nimble: c3d7c9848a0adae88a665ca52f8da23dd4d2cd94
+  Nimble: 317d713c30c3336dd8571da1889f7ec3afc626e8
   Nimble-Snapshots: 240ea76ee8e52dfc1387b8d0d9bf1db3420cabbd
   Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
   RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
-  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
-  RxRelay: 4151ba01152436b08271e08410135e099880eae5
-  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
   RxUtils: e40d1ccfeb0eb54a10a958df556c6383f757079d
 
 PODFILE CHECKSUM: 0646d1b7b90aba8e43e6799a0e4fd0acff286ff0
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
