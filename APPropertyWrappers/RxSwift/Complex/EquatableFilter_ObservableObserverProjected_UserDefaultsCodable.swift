@@ -77,7 +77,7 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
 
 // ******************************* MARK: - Convenience Inits
 
-extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByNilLiteral {
+public extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByNilLiteral {
     convenience init(key: String,
                      compare: EquatableFilter<V>.Compare? = nil,
                      file: String = #file,
@@ -88,7 +88,7 @@ extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V
     }
 }
 
-extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByArrayLiteral {
+public extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByArrayLiteral {
     convenience init(key: String,
                      compare: EquatableFilter<V>.Compare? = nil,
                      file: String = #file,
@@ -99,7 +99,7 @@ extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V
     }
 }
 
-extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByDictionaryLiteral {
+public extension EquatableFilter_ObservableObserverProjected_UserDefaultCodable where V: ExpressibleByDictionaryLiteral {
     convenience init(key: String,
                      compare: EquatableFilter<V>.Compare? = nil,
                      file: String = #file,
