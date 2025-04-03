@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file.
 `APPropertyWrappers` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [4.0.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/4.0.0)
+Released on `2025-04-03`
+
+#### Added
+- [FilePreservedCodable] New property wrapper
+
+#### Changed
+- [BoolPreserved] `reset` logic adjust to do not log error on missing file
+
+#### Fixed
+- [EquatableFilter_ObservableObserverProjected_UserDefaultCodable] Public inits
+
+
 ## [3.2.0](https://github.com/APUtils/APPropertyWrappers/releases/tag/3.2.0)
 Released on 2024-03-25.
 

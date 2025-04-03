@@ -27,13 +27,13 @@ APPropertyWrappers is available through [CocoaPods](http://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'APPropertyWrappers', '~> 3.2'
+pod 'APPropertyWrappers', '~> 4.0'
 ```
 
 To add `RxSwift` property wrappers additionally add:
 
 ```ruby
-pod 'APPropertyWrappers/RxSwift', '~> 3.2'
+pod 'APPropertyWrappers/RxSwift', '~> 4.0'
 ```
 
 ## Usage
