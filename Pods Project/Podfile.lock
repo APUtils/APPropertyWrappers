@@ -1,12 +1,12 @@
 PODS:
-  - APExtensions/Dispatch (14.2.0):
+  - APExtensions/Dispatch (15.0.0):
     - RoutableLogger
-  - APExtensions/Occupiable (14.2.0)
-  - APExtensions/OptionalType (14.2.0)
-  - APPropertyWrappers/Core (3.2.0):
+  - APExtensions/Occupiable (15.0.0)
+  - APExtensions/OptionalType (15.0.0)
+  - APPropertyWrappers/Core (4.0.0):
     - APExtensions/OptionalType
     - RoutableLogger (>= 9.1.5)
-  - APPropertyWrappers/RxSwift (3.2.0):
+  - APPropertyWrappers/RxSwift (4.0.0):
     - APPropertyWrappers/Core
     - RxCocoa
     - RxSwift
@@ -33,16 +33,16 @@ PODS:
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble (~> 13.0)
   - Quick (7.6.2)
-  - RoutableLogger (12.4.0)
-  - RxCocoa (6.8.0):
-    - RxRelay (= 6.8.0)
-    - RxSwift (= 6.8.0)
+  - RoutableLogger (13.0.0)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - RxRelay (6.8.0):
-    - RxSwift (= 6.8.0)
-  - RxSwift (6.8.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
   - RxSwiftExt (6.2.1):
     - RxSwiftExt/Core (= 6.2.1)
     - RxSwiftExt/RxCocoa (= 6.2.1)
@@ -51,15 +51,15 @@ PODS:
   - RxSwiftExt/RxCocoa (6.2.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - RxUtils (4.3.2):
-    - APExtensions/Dispatch (~> 14.0)
-    - APExtensions/Occupiable (~> 14.0)
-    - APExtensions/OptionalType (~> 14.0)
-    - RoutableLogger (~> 12.0)
-    - RxCocoa (~> 6.0)
-    - RxGesture (~> 4.0)
-    - RxSwift (~> 6.0)
-    - RxSwiftExt (~> 6.0)
+  - RxUtils (5.0.1):
+    - APExtensions/Dispatch (>= 15.0)
+    - APExtensions/Occupiable (>= 15.0)
+    - APExtensions/OptionalType (>= 15.0)
+    - RoutableLogger (>= 12.0)
+    - RxCocoa (>= 6.0)
+    - RxGesture (>= 4.0)
+    - RxSwift (>= 6.0)
+    - RxSwiftExt (>= 6.0)
 
 DEPENDENCIES:
   - APPropertyWrappers/RxSwift (from `../`)
@@ -68,7 +68,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - APExtensions
     - CwlCatchException
     - CwlCatchExceptionSupport
@@ -92,8 +92,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  APExtensions: c91c6e186ace20b0955607aed7dfae912e8c840f
-  APPropertyWrappers: 623e42fbed25726534c488eca6a01ab08574d31d
+  APExtensions: d0692b34c786b9282e09b9cd519c58269f847c62
+  APPropertyWrappers: 0e4768aed449d34fc0cddeea4e3da13412cbf4a7
   CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
   CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
   CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
@@ -103,14 +103,14 @@ SPEC CHECKSUMS:
   Nimble: 317d713c30c3336dd8571da1889f7ec3afc626e8
   Nimble-Snapshots: 240ea76ee8e52dfc1387b8d0d9bf1db3420cabbd
   Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
-  RoutableLogger: 5c0d14daf01b023d1506e5a426b53418daac3f8b
-  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RoutableLogger: 31ce799b16b4868c169ed68c36e25437dd0ca40e
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
-  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
-  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   RxSwiftExt: 43aaacb6a4d3c69c55e9d1cf4f79920043d13583
-  RxUtils: e40d1ccfeb0eb54a10a958df556c6383f757079d
+  RxUtils: 28442ced10d8cbeaa6faecdef4761b5c3dbd6044
 
-PODFILE CHECKSUM: 0646d1b7b90aba8e43e6799a0e4fd0acff286ff0
+PODFILE CHECKSUM: fe570e5fa69f141b59c26117d099c1c0ee31e5ef
 
 COCOAPODS: 1.16.2

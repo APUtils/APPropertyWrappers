@@ -35,11 +35,11 @@
 		0D3CD35627461221000AFFB6 /* BoolPreserved_Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolPreserved_Spec.swift; sourceTree = "<group>"; };
 		0D5EB91229E4107C008AE583 /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
 		0D5EB91329E4107C008AE583 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		0D5EB91429E4107C008AE583 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
+		0D5EB91429E4107C008AE583 /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../../checkBuild.command; sourceTree = "<group>"; };
 		0D5EB91729E415A8008AE583 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0D5EB91829E4187E008AE583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0DE114522606111000D75ADA /* APPropertyWrappers.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = APPropertyWrappers.podspec; path = ../APPropertyWrappers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0DE1517D26065FBB0067545C /* podPush.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		0DE1517D26065FBB0067545C /* podPush.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podPush.command; path = ../../podPush.command; sourceTree = "<group>"; };
 		0DF75931283D5318000E93EF /* FilePreserved_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreserved_Spec.swift; sourceTree = "<group>"; };
 		3BAB050FA5F151A6C9641585 /* Pods-APPropertyWrappers_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.release.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* APPropertyWrappers_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPropertyWrappers_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +54,7 @@
 		C4182D4C2E4C93EA1DD53BAF /* Pods-APPropertyWrappers_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Example.release.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Example/Pods-APPropertyWrappers_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C98A3E8F14E4508AB96B3144 /* Pods_APPropertyWrappers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPropertyWrappers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21379B82B2B758000FC5874 /* UserDefault_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault_Spec.swift; sourceTree = "<group>"; };
-		E2327DE92A5D494E00A659CE /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
+		E2327DE92A5D494E00A659CE /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../../packageUpdate.command; sourceTree = "<group>"; };
 		E2D36EAE2C89AA7300439679 /* FilePreservedCodable_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreservedCodable_Spec.swift; sourceTree = "<group>"; };
 		EE6E7919956458C52CF8E2AC /* Pods-APPropertyWrappers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPropertyWrappers_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APPropertyWrappers_Tests/Pods-APPropertyWrappers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +110,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				E27540EB2D9E92EB00CCE68F /* _Scripts */,
 				607FACF51AFB993E008FA782 /* _ */,
 				607FACD21AFB9204008FA782 /* Example for APPropertyWrappers */,
 				0D3CD34D274611F0000AFFB6 /* APPropertyWrappers_Tests */,
@@ -157,11 +158,8 @@
 			children = (
 				0DE114522606111000D75ADA /* APPropertyWrappers.podspec */,
 				0D5EB91329E4107C008AE583 /* CHANGELOG.md */,
-				0D5EB91429E4107C008AE583 /* checkBuild.command */,
 				0D5EB91229E4107C008AE583 /* DEPLOY PROCESS.md */,
 				0D5EB91729E415A8008AE583 /* Package.swift */,
-				E2327DE92A5D494E00A659CE /* packageUpdate.command */,
-				0DE1517D26065FBB0067545C /* podPush.command */,
 				0D5EB91829E4187E008AE583 /* README.md */,
 			);
 			name = _;
@@ -190,6 +188,16 @@
 				3BAB050FA5F151A6C9641585 /* Pods-APPropertyWrappers_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E27540EB2D9E92EB00CCE68F /* _Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EB91429E4107C008AE583 /* checkBuild.command */,
+				E2327DE92A5D494E00A659CE /* packageUpdate.command */,
+				0DE1517D26065FBB0067545C /* podPush.command */,
+			);
+			path = _Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +251,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0D3CD34B274611F0000AFFB6 = {

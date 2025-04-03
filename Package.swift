@@ -22,9 +22,9 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "14.0.0")),
-        .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "4.2.0")),
+        .package(url: "https://github.com/anton-plebanovich/RoutableLogger.git", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/APUtils/APExtensions.git", .upToNextMajor(from: "15.0.0")),
+        .package(url: "https://github.com/APUtils/RxUtils.git", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
     ],
     targets: [
