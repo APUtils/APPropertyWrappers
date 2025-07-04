@@ -39,10 +39,10 @@ open class UserDefault<V> {
         userDefaults.removeObject(forKey: key)
     }
     
-    /// Resets preserved value to its default.
+    /// Resets preserved value to its default by removing value from `UserDefaults`
     open func reset() {
-        removeFromUserDefaults()
         _storage.projectedValue = _defferedDefaultValue.projectedValue
+        removeFromUserDefaults()
     }
     
     public convenience init(suitName: String? = nil,

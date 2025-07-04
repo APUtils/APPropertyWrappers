@@ -82,11 +82,11 @@ open class FilePreserved {
         }
     }
     
-    /// Resets value to its default.
+    /// Resets value to its default by erasing related file.
     public func reset() {
         do {
-            try FileManager.default.removeItem(at: url)
             storage = nil
+            try FileManager.default.removeItem(at: url)
         } catch {
             RoutableLogger.logError("Unable to reset preserved data", error: error, data: ["url": url])
         }
