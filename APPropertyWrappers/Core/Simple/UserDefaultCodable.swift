@@ -19,7 +19,7 @@ public final class UserDefaultCodable<V: Codable> {
     fileprivate let userDefaults: UserDefaults
     fileprivate let useStorage: Bool
     fileprivate let key: String
-    @Lazy fileprivate var defaultValue: V
+    @Lazy var defaultValue: V
     
     /// Storage that is used to prevent continuous object decode and so to speedup property access.
     @Lazy fileprivate var storage: V
