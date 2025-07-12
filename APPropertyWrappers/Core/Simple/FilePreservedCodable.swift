@@ -45,8 +45,10 @@ open class FilePreservedCodable<V: Codable & Equatable> {
     
     /// Resets value to its default by erasing related file.
     public func reset() {
+        storage = defaultValue
+        guard FileManager.default.fileExists(atPath: url.path) else { return }
+        
         do {
-            storage = defaultValue
             try FileManager.default.removeItem(at: url)
         } catch {
             RoutableLogger.logError("Unable to reset preserved data", error: error, data: ["url": url])
