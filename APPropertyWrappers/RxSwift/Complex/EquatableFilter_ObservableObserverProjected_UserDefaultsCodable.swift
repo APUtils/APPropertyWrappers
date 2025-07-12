@@ -73,6 +73,13 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
             .bind(to: _userDefault)
             .disposed(by: disposeBag)
     }
+    
+    /// Resets preserved value to its default by removing value from `UserDefaults`
+    func reset() {
+        _userDefault.reset()
+        storage = userDefault
+        filter = storage
+    }
 }
 
 // ******************************* MARK: - Convenience Inits
