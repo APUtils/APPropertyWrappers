@@ -45,6 +45,15 @@ public final class UserDefaultCodable<V: Codable> {
         }
     }
     
+    public var preservedValue: V? {
+        guard hasPreservedValue else { return nil }
+        return wrappedValue
+    }
+    
+    public var hasPreservedValue: Bool {
+        userDefaults.object(forKey: key) != nil
+    }
+    
     /// Removes object from the UserDefaults but preserves it in the storage
     public func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)

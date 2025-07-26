@@ -34,6 +34,15 @@ open class UserDefault<V> {
         }
     }
     
+    open var preservedValue: V? {
+        guard hasPreservedValue else { return nil }
+        return wrappedValue
+    }
+    
+    open var hasPreservedValue: Bool {
+        userDefaults.object(forKey: key) != nil
+    }
+    
     /// Removes object from the UserDefaults
     open func removeFromUserDefaults() {
         userDefaults.removeObject(forKey: key)
@@ -44,6 +53,8 @@ open class UserDefault<V> {
         _storage.projectedValue = _defferedDefaultValue.projectedValue
         removeFromUserDefaults()
     }
+    
+    // ******************************* MARK: - Initialization and Setup
     
     public convenience init(suitName: String? = nil,
                             key: String,

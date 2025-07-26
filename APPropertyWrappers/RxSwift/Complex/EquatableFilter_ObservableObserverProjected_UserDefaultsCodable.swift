@@ -46,6 +46,14 @@ open class EquatableFilter_ObservableObserverProjected_UserDefaultCodable<V: Cod
         }
     }
     
+    public var preservedValue: V? {
+        _userDefault.preservedValue
+    }
+    
+    public var hasPreservedValue: Bool {
+        _userDefault.hasPreservedValue
+    }
+    
     public init(key: String,
                 defaultValue: V,
                 compare: EquatableFilter<V>.Compare? = nil,
