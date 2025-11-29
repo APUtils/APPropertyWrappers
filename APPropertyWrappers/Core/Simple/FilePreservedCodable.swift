@@ -14,6 +14,7 @@ import RoutableLogger
 open class FilePreservedCodable<V: Codable & Equatable> {
     
     private let url: URL
+    private let preserveDefault: Bool
     
     /// Storage that is used to prevent continuous object read from file and so to speedup property access.
     private var storage: V
@@ -33,12 +34,15 @@ open class FilePreservedCodable<V: Codable & Equatable> {
     
     public init(key: String, defaultValue: V, preserveDefault: Bool = false) {
         self.url = FilePreserved.documentsURL.appendingPathComponent("FilePreservedCodable_\(key)")
+        self.preserveDefault = preserveDefault
         self.defaultValue = defaultValue
         
         if let value = Self.getValue(url: url) {
             self.storage = value
         } else {
-            Self.setValue(defaultValue, url: url)
+            if preserveDefault {
+                Self.setValue(defaultValue, url: url)
+            }
             self.storage = defaultValue
         }
     }
@@ -46,6 +50,12 @@ open class FilePreservedCodable<V: Codable & Equatable> {
     /// Resets value to its default by erasing related file.
     public func reset() {
         storage = defaultValue
+        
+        if preserveDefault {
+            Self.setValue(defaultValue, url: url)
+            return
+        }
+        
         guard FileManager.default.fileExists(atPath: url.path) else { return }
         
         do {
