@@ -34,7 +34,7 @@ open class Default<V: Codable>: Codable {
     // ******************************* MARK: - Initialization and Setup
     
     public init(
-        defaultValue: V,
+        _ defaultValue: V,
         file: String = #file,
         function: String = #function,
         line: UInt = #line
@@ -48,18 +48,18 @@ open class Default<V: Codable>: Codable {
 
 public extension Default where V: ExpressibleByNilLiteral {
     convenience init() {
-        self.init(defaultValue: nil)
+        self.init(nil)
     }
 }
 
 public extension Default where V: ExpressibleByArrayLiteral {
     convenience init() {
-        self.init(defaultValue: [])
+        self.init([])
     }
 }
 
 public extension Default where V: ExpressibleByDictionaryLiteral {
     convenience init() {
-        self.init(defaultValue: [:])
+        self.init([:])
     }
 }
