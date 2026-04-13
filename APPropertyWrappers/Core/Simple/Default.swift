@@ -8,12 +8,12 @@
 
 /// Property wrapper with default value
 @propertyWrapper
-open class Default<V: Codable>: Codable {
+public struct Default<V: Codable>: Codable {
     
     fileprivate var isAdjusted: Bool
     fileprivate var storage: V
     
-    open var wrappedValue: V {
+    public var wrappedValue: V {
         get {
             storage
         }
@@ -24,7 +24,7 @@ open class Default<V: Codable>: Codable {
     }
     
     /// Returns value if it was ever adjsuted. Otherwise, returns `nil`.
-    open var adjusted: V? {
+    public var adjusted: V? {
         isAdjusted ? storage : nil
     }
     
@@ -44,19 +44,19 @@ open class Default<V: Codable>: Codable {
 // ******************************* MARK: - Convenience Inits
 
 public extension Default where V: ExpressibleByNilLiteral {
-    convenience init() {
+    init() {
         self.init(nil)
     }
 }
 
 public extension Default where V: ExpressibleByArrayLiteral {
-    convenience init() {
+    init() {
         self.init([])
     }
 }
 
 public extension Default where V: ExpressibleByDictionaryLiteral {
-    convenience init() {
+    init() {
         self.init([:])
     }
 }
