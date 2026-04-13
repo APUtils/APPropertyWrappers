@@ -6,15 +6,12 @@
 //  Copyright © 2026 Anton Plebanovich. All rights reserved.
 //
 
-import Foundation
-import RoutableLogger
-
 /// Property wrapper with default value
 @propertyWrapper
 open class Default<V: Codable>: Codable {
     
-    private var isAdjusted: Bool
-    private var storage: V
+    fileprivate var isAdjusted: Bool
+    fileprivate var storage: V
     
     open var wrappedValue: V {
         get {
@@ -61,5 +58,14 @@ public extension Default where V: ExpressibleByArrayLiteral {
 public extension Default where V: ExpressibleByDictionaryLiteral {
     convenience init() {
         self.init([:])
+    }
+}
+
+// ******************************* MARK: - Equatable
+
+extension Default: Equatable where V: Equatable {
+    public static func == (lhs: Default<V>, rhs: Default<V>) -> Bool {
+        lhs.isAdjusted == rhs.isAdjusted
+        && lhs.storage == rhs.storage
     }
 }
