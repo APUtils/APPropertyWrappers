@@ -32,11 +32,12 @@ public struct Default<V: Codable>: Codable {
     
     public init(
         _ defaultValue: V,
+        isAdjusted: Bool = false,
         file: String = #file,
         function: String = #function,
         line: UInt = #line
     ) {
-        self.isAdjusted = false
+        self.isAdjusted = isAdjusted
         self.storage = defaultValue
     }
 }
